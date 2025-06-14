@@ -226,12 +226,6 @@ defmodule MeksDevWeb.PortfolioLive do
               </div>
             </div>
           </div>
-
-          <div class="text-center">
-            <button class="sketchy-border px-6 py-3 bg-journal-white organic-hover handwritten text-lg text-journal-charcoal flex items-center gap-2 mx-auto">
-              <span>☕</span> Buy me tea
-            </button>
-          </div>
         </div>
       </section>
       
@@ -332,8 +326,30 @@ defmodule MeksDevWeb.PortfolioLive do
         </div>
       </section>
       
+    <!-- Tea Sponsorship Section -->
+      <section class="py-16 px-4 bg-journal-cream">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="sketchy-border p-8 ink-bleed organic-hover bg-journal-white mb-8">
+            <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
+              Fuel the Creative Process
+            </h3>
+            <p class="text-journal-gray mb-6 leading-relaxed">
+              If you enjoy my work and want to support my continued exploration of elegant code and creative solutions,
+              consider sponsoring my tea obsession! Every cup of Earl Grey helps fuel late-night coding sessions and sparks new ideas. ☕✨
+            </p>
+            <a
+              href="https://buymeacoffee.com/meks"
+              class="sketchy-border px-8 py-4 bg-journal-white organic-hover handwritten text-xl text-journal-charcoal inline-flex items-center gap-3 gentle-wobble"
+            >
+              <span class="text-2xl">🫖</span>
+              <span>Buy me tea</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      
     <!-- Footer -->
-      <footer class="py-12 px-4 border-t border-journal-gray-lighter">
+      <footer class="py-12 px-4 border-t border-journal-gray-lighter bg-journal-cream">
         <div class="max-w-4xl mx-auto text-center">
           <p class="text-journal-gray mb-2">
             Built by Meks • Powered by Elixir/Phoenix • Hosted on Fly.io
