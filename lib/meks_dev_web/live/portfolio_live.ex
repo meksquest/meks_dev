@@ -352,7 +352,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <footer class="py-12 px-4 border-t border-journal-gray-lighter bg-journal-cream">
         <div class="max-w-4xl mx-auto text-center">
           <p class="text-journal-gray mb-2">
-            Built by Meks • Powered by Elixir/Phoenix • Hosted on Fly.io
+            Built by meks.dev • Powered by Elixir/Phoenix • Hosted on Fly.io
           </p>
           <p class="handwritten text-journal-charcoal">
             Made with care and lots of tea ❤️
