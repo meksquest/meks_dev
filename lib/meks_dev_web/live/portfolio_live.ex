@@ -290,11 +290,45 @@ defmodule MeksDevWeb.PortfolioLive do
           </div>
         </div>
       </section>
-
+      
+    <!-- Writing Section -->
       <section id="writing" class="py-20 px-4 relative">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="handwritten-bold text-4xl text-journal-charcoal mb-8">Writing</h2>
-          <p class="text-journal-gray">Coming soon...</p>
+        <div class="max-w-4xl mx-auto">
+          <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
+            Writing
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="sketchy-border p-6 ink-bleed organic-hover">
+              <h3 class="handwritten text-xl text-journal-charcoal mb-4">Technical Deep Dives</h3>
+              <p class="text-journal-gray text-sm mb-4">
+                In-depth explorations of Elixir, Phoenix, and LiveView concepts
+              </p>
+              <a
+                href="https://dev.to/mmcclure11"
+                class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors text-sm handwritten"
+              >
+                Read articles →
+              </a>
+            </div>
+
+            <div class="sketchy-border p-6 ink-bleed organic-hover">
+              <h3 class="handwritten text-xl text-journal-charcoal mb-4">Life & Perspectives</h3>
+              <p class="text-journal-gray text-sm mb-4">
+                Travel stories, queer experiences, and personal reflections
+              </p>
+              <a
+                href="#"
+                class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors text-sm handwritten"
+              >
+                Coming soon…
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center text-journal-gray text-sm italic">
+            <p>*Transitioning from dev.to to this personal space</p>
+          </div>
         </div>
       </section>
       
