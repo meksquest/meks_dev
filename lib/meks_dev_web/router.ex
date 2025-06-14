@@ -17,7 +17,7 @@ defmodule MeksDevWeb.Router do
   scope "/", MeksDevWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PortfolioLive
   end
 
   # Other scopes may use custom stacks.

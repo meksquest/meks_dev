@@ -1,0 +1,204 @@
+/* Journal Portfolio Custom Styles - Phoenix/Tailwind Version */
+
+/* Custom color definitions for Tailwind */
+@layer base {
+  :root {
+    --journal-cream: #F8F6F0;
+    --journal-white: #FFFFFF;
+    --journal-charcoal: #2C2C2C;
+    --journal-gray: #666666;
+    --journal-gray-light: #999999;
+    --journal-gray-lighter: #CCCCCC;
+  }
+}
+
+@layer components {
+  /* Sketchy hand-drawn borders */
+  .sketchy-border {
+    @apply relative bg-white;
+    border: none;
+  }
+
+  .sketchy-border::before {
+    content: '';
+    @apply absolute -top-0.5 -left-0.5 -right-0.5 -bottom-0.5;
+    background: none;
+    border: 2px solid #2C2C2C;
+    border-radius: 8px;
+    transform: rotate(0.5deg);
+    z-index: -1;
+  }
+
+  .sketchy-border::after {
+    content: '';
+    @apply absolute -top-px -left-px -right-px -bottom-px;
+    background: none;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    transform: rotate(-0.3deg);
+    z-index: -2;
+  }
+
+  /* Paper texture background */
+  .paper-texture {
+    background-image:
+      radial-gradient(circle at 20px 50px, #F5F3ED 2px, transparent 2px),
+      radial-gradient(circle at 50px 25px, #F5F3ED 1px, transparent 1px),
+      radial-gradient(circle at 80px 75px, #F2F0EA 1px, transparent 1px);
+    background-size: 100px 100px, 60px 60px, 120px 120px;
+    background-position: 0 0, 30px 30px, 60px 0;
+  }
+
+  /* Ink bleed border effect */
+  .ink-bleed {
+    @apply relative transition-all duration-300;
+  }
+
+  .ink-bleed::after {
+    content: '';
+    @apply absolute -top-0.5 -left-0.5 -right-0.5 -bottom-0.5;
+    border: 1px solid rgba(44, 44, 44, 0);
+    border-radius: inherit;
+    transition: all 0.6s ease;
+    z-index: -1;
+  }
+
+  .ink-bleed:hover::after {
+    border-color: rgba(44, 44, 44, 0.3);
+    @apply -top-1 -left-1 -right-1 -bottom-1;
+    box-shadow: 0 0 8px rgba(44, 44, 44, 0.1);
+  }
+
+  /* Text writing animation */
+  .text-write {
+    animation: text-appear 2s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes text-appear {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(2px);
+    }
+    50% {
+      opacity: 0.7;
+      filter: blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  /* Handwritten fonts */
+  .handwritten {
+    font-family: 'Kalam', cursive;
+    font-weight: 400;
+  }
+
+  .handwritten-bold {
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+  }
+
+  /* Organic hover animations */
+  .organic-hover {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .organic-hover:hover {
+    transform: translateY(-2px) rotate(0.3deg);
+    box-shadow: 0 6px 15px rgba(44, 44, 44, 0.08);
+  }
+
+  /* Gentle wobble animation */
+  .gentle-wobble:hover {
+    animation: gentle-wobble 0.6s ease-in-out;
+  }
+
+  @keyframes gentle-wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(0.5deg); }
+    75% { transform: rotate(-0.5deg); }
+  }
+
+  /* Floating animation */
+  .float-gentle {
+    animation: float-gentle 6s ease-in-out infinite;
+  }
+
+  @keyframes float-gentle {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+
+  /* Journal tab styles */
+  .journal-tab {
+    @apply relative border-2 border-gray-800 rounded-md bg-white;
+    border-radius: 6px 12px 6px 12px;
+    box-shadow:
+      2px 4px 8px rgba(0, 0, 0, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .journal-tab:hover {
+    box-shadow:
+      4px 8px 16px rgba(0, 0, 0, 0.15),
+      0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .journal-tab.active {
+    box-shadow:
+      6px 12px 24px rgba(0, 0, 0, 0.2),
+      0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Sketchy tech badges */
+  .sketchy-tech-badge {
+    @apply relative inline-block px-3 py-1.5 bg-white text-gray-800 text-sm cursor-default transition-all duration-300;
+  }
+
+  .sketchy-tech-badge::before {
+    content: '';
+    @apply absolute -top-px -left-px -right-px -bottom-px;
+    background: none;
+    border: 1.5px solid #2C2C2C;
+    border-radius: 4px;
+    transform: rotate(0.5deg);
+    z-index: -2;
+    transition: all 0.3s ease;
+  }
+
+  .sketchy-tech-badge::after {
+    content: '';
+    @apply absolute;
+    top: -0.5px;
+    left: -0.5px;
+    right: -0.5px;
+    bottom: -0.5px;
+    background: none;
+    border: 1px solid #666666;
+    border-radius: 3px;
+    transform: rotate(-0.3deg);
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+
+  .sketchy-tech-badge:hover {
+    transform: translateY(-1px) rotate(0.2deg);
+  }
+}
+
+/* Custom Tailwind color classes */
+.bg-journal-cream { background-color: #F8F6F0; }
+.bg-journal-white { background-color: #FFFFFF; }
+.bg-journal-charcoal { background-color: #2C2C2C; }
+.text-journal-cream { color: #F8F6F0; }
+.text-journal-white { color: #FFFFFF; }
+.text-journal-charcoal { color: #2C2C2C; }
+.text-journal-gray { color: #666666; }
+.border-journal-charcoal { border-color: #2C2C2C; }
+.border-journal-gray-light { border-color: #999999; }
+.border-journal-gray-lighter { border-color: #CCCCCC; }
