@@ -2,18 +2,23 @@ defmodule MeksDevWeb.PortfolioLive do
   use MeksDevWeb, :live_view
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, active_section: "hero")}
+    {:ok, assign(socket, active_section: "hero", mobile_menu_open: false)}
   end
 
   def handle_event("navigate_to_section", %{"section" => section}, socket) do
     {:noreply,
      socket
-     |> assign(active_section: section)
+     # Close menu when navigating
+     |> assign(active_section: section, mobile_menu_open: false)
      |> push_event("scroll_to_section", %{section: section})}
   end
 
   def handle_event("section_in_view", %{"section" => section}, socket) do
     {:noreply, assign(socket, active_section: section)}
+  end
+
+  def handle_event("toggle_mobile_menu", _params, socket) do
+    {:noreply, assign(socket, mobile_menu_open: !socket.assigns.mobile_menu_open)}
   end
 
   def render(assigns) do
@@ -28,18 +33,50 @@ defmodule MeksDevWeb.PortfolioLive do
       
     <!-- Mobile Navigation -->
       <div class="lg:hidden fixed top-4 right-4 z-50">
-        <button class="bg-journal-white border-journal-charcoal border-2 rounded p-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            >
-            </path>
-          </svg>
+        <button
+          phx-click="toggle_mobile_menu"
+          class="bg-journal-white border-journal-charcoal border-2 rounded p-2 organic-hover"
+        >
+          <%= if @mobile_menu_open do %>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              >
+              </path>
+            </svg>
+          <% else %>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              >
+              </path>
+            </svg>
+          <% end %>
         </button>
       </div>
+      
+    <!-- Mobile Menu Overlay -->
+      <%= if @mobile_menu_open do %>
+        <div class="lg:hidden fixed inset-0 bg-journal-cream paper-texture z-40 p-8">
+          <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <%= for {tab_id, label} <- [{"hero", "meks.dev"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
+              <button
+                phx-click="navigate_to_section"
+                phx-value-section={tab_id}
+                class="handwritten text-3xl text-journal-charcoal hover:text-journal-gray transition-colors organic-hover"
+              >
+                {label}
+              </button>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
       
     <!-- Hero Section -->
       <section id="hero" class="min-h-screen flex items-center justify-center px-4 relative">
