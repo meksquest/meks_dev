@@ -45,7 +45,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="hero" class="min-h-screen flex items-center justify-center px-4 relative">
         <div class="text-center max-w-4xl mx-auto relative z-10">
           <h1 class="handwritten-bold text-7xl md:text-9xl text-journal-charcoal mb-6 text-write">
-            Meks McClure
+            meks.dev
           </h1>
           <p class="text-xl md:text-2xl text-journal-gray mb-4 text-write">
             (they/them)
@@ -60,19 +60,19 @@ defmodule MeksDevWeb.PortfolioLive do
     <!-- Quick Contact Links -->
           <div class="flex justify-center gap-8 text-write">
             <a
-              href="mailto:meks@example.com"
+              href="mailto:mmcclure0100@gmail.com"
               class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
             >
               <span class="handwritten text-lg">📧 Email</span>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/meksmcclure/"
               class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
             >
               <span class="handwritten text-lg">💼 LinkedIn</span>
             </a>
             <a
-              href="#"
+              href="https://github.com/MMcClure11"
               class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
             >
               <span class="handwritten text-lg">🐙 GitHub</span>
@@ -92,12 +92,12 @@ defmodule MeksDevWeb.PortfolioLive do
             <div class="sketchy-border p-8 ink-bleed organic-hover">
               <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Professional</h3>
               <p class="text-journal-gray leading-relaxed mb-4">
-                Passionate Elixir & Phoenix developer with expertise in building scalable, real-time applications.
-                I specialize in LiveView, functional programming, and creating elegant solutions to complex problems.
+                Passionate developer with expertise in building scalable, real-time applications.
+                I specialize in LiveView with Phoenix and Elixir, functional programming, and creating elegant solutions to complex problems.
               </p>
               <p class="text-journal-gray leading-relaxed">
-                Active in LGBTQIA+ leadership and mentoring, helping grow the next generation of developers
-                through inclusive practices and community building.
+                Active in LGBTQIA+ leadership, helping grow the next generation of developers
+                through inclusive practices, community building, and education.
               </p>
             </div>
 
@@ -106,19 +106,15 @@ defmodule MeksDevWeb.PortfolioLive do
               <ul class="text-journal-gray space-y-2">
                 <li class="flex items-center gentle-wobble">
                   <span class="mr-3">☕</span>
-                  <span>Tea enthusiast (Earl Grey is ♥️)</span>
+                  <span>Tea enthusiast (matcha is ♥️)</span>
                 </li>
                 <li class="flex items-center gentle-wobble">
-                  <span class="mr-3">📔</span>
-                  <span>Journal keeper & analog lover</span>
+                  <span class="mr-3">🎨</span>
+                  <span>Journal destroyer & ink consumer</span>
                 </li>
                 <li class="flex items-center gentle-wobble">
-                  <span class="mr-3">🐦‍⬛</span>
-                  <span>Crow enthusiast & nature observer</span>
-                </li>
-                <li class="flex items-center gentle-wobble">
-                  <span class="mr-3">♿</span>
-                  <span>Accessibility advocate</span>
+                  <span class="mr-3">🗺️</span>
+                  <span>Traveler</span>
                 </li>
               </ul>
             </div>
@@ -132,7 +128,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="projects" class="py-20 px-4 relative">
         <div class="max-w-6xl mx-auto">
           <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
-            Featured Projects
+            Projects
           </h2>
 
           <div class="grid md:grid-cols-2 gap-12 mb-12">
@@ -237,7 +233,7 @@ defmodule MeksDevWeb.PortfolioLive do
     ~H"""
     <div class="hidden lg:block fixed right-8 top-1/2 transform -translate-y-1/2 z-40">
       <div class="flex flex-col space-y-2">
-        <%= for {tab_id, label} <- [{"hero", "Start"}, {"about", "About"}, {"projects", "Work"}, {"speaking", "Talks"}, {"writing", "Words"}] do %>
+        <%= for {tab_id, label} <- [{"hero", "meks.dev"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
           <button
             phx-click="navigate_to_section"
             phx-value-section={tab_id}
