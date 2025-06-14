@@ -10,7 +10,7 @@ kill_signal = 'SIGTERM'
 [build]
 
 [env]
-  PHX_HOST = 'meks-dev.fly.dev'
+  PHX_HOST = 'meks.quest'
   PORT = '8080'
 
 [http_service]
