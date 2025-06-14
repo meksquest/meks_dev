@@ -127,10 +127,80 @@ defmodule MeksDevWeb.PortfolioLive do
       </section>
       
     <!-- Placeholder sections for navigation -->
+
+    <!-- Projects Section -->
       <section id="projects" class="py-20 px-4 relative">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="handwritten-bold text-4xl text-journal-charcoal mb-8">Projects</h2>
-          <p class="text-journal-gray">Coming soon...</p>
+        <div class="max-w-6xl mx-auto">
+          <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
+            Featured Projects
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-12 mb-12">
+            <div class="sketchy-border p-8 ink-bleed organic-hover">
+              <h3 class="handwritten-bold text-3xl text-journal-charcoal mb-4">Quenta</h3>
+              <p class="text-journal-gray mb-4">
+                Expense sharing app prototyped with Elixir/Phoenix, and built with Svelt.
+              </p>
+              <div class="w-full h-48 bg-journal-cream border border-journal-gray-light flex items-center justify-center mb-6 gentle-wobble">
+                <span class="text-journal-gray handwritten">Screenshot Coming Soon</span>
+              </div>
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span class="sketchy-tech-badge">Elixir</span>
+                <span class="sketchy-tech-badge">Phoenix</span>
+                <span class="sketchy-tech-badge">LiveView</span>
+                <span class="sketchy-tech-badge">PostgreSQL</span>
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="https://github.com/MMcClure11/quenta/tree/main/elixir"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  Elixir Prototype GitHub
+                </a>
+                <a
+                  href="https://ex.quenta.pro/"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  Elixir Prototype Live
+                </a>
+              </div>
+            </div>
+
+            <div class="sketchy-border p-8 ink-bleed organic-hover">
+              <h3 class="handwritten-bold text-3xl text-journal-charcoal mb-4">Bookshelf</h3>
+              <p class="text-journal-gray mb-4">
+                A virtual library of all the books you want to keep tabs on, those sneaky buggers tend to run off in search of adventure.
+              </p>
+              <div class="w-full h-48 bg-journal-cream border border-journal-gray-light flex items-center justify-center mb-6 gentle-wobble">
+                <span class="text-journal-gray handwritten">Screenshot Coming Soon</span>
+              </div>
+              <div class="flex flex-wrap gap-3 mb-4">
+                <span class="sketchy-tech-badge">Elixir</span>
+                <span class="sketchy-tech-badge">Phoenix</span>
+                <span class="sketchy-tech-badge">LiveView</span>
+              </div>
+              <div class="flex gap-4">
+                <a
+                  href="https://github.com/MMcClure11/bookshelf"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://bookshelf-meks.fly.dev/"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  Live
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button class="sketchy-border px-6 py-3 bg-journal-white organic-hover handwritten text-lg text-journal-charcoal flex items-center gap-2 mx-auto">
+              <span>☕</span> Buy me tea
+            </button>
+          </div>
         </div>
       </section>
 
