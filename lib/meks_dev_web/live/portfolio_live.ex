@@ -172,8 +172,12 @@ defmodule MeksDevWeb.PortfolioLive do
               <p class="text-journal-gray mb-4">
                 Expense sharing app prototyped with Elixir/Phoenix, and built with Svelt.
               </p>
-              <div class="w-full h-48 bg-journal-cream border border-journal-gray-light flex items-center justify-center mb-6 gentle-wobble">
-                <span class="text-journal-gray handwritten">Screenshot Coming Soon</span>
+              <div class="mb-6 gentle-wobble">
+                <img
+                  src={~p"/images/projects/quenta-screenshot.png"}
+                  alt="Quenta collaborative storytelling platform screenshot"
+                  class="w-full h-48 object-cover border border-journal-gray-light rounded organic-hover"
+                />
               </div>
               <div class="flex flex-wrap gap-3 mb-4">
                 <span class="sketchy-tech-badge">Elixir</span>
@@ -202,8 +206,12 @@ defmodule MeksDevWeb.PortfolioLive do
               <p class="text-journal-gray mb-4">
                 A virtual library of all the books you want to keep tabs on, those sneaky buggers tend to run off in search of adventure.
               </p>
-              <div class="w-full h-48 bg-journal-cream border border-journal-gray-light flex items-center justify-center mb-6 gentle-wobble">
-                <span class="text-journal-gray handwritten">Screenshot Coming Soon</span>
+              <div class="mb-6 gentle-wobble">
+                <img
+                  src={~p"/images/projects/bookshelf-screenshot.png"}
+                  alt="Bookshelf book management system screenshot"
+                  class="w-full h-48 object-cover border border-journal-gray-light rounded organic-hover"
+                />
               </div>
               <div class="flex flex-wrap gap-3 mb-4">
                 <span class="sketchy-tech-badge">Elixir</span>
