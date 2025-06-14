@@ -6,12 +6,23 @@ defmodule MeksDevWeb.PortfolioLive do
   end
 
   def handle_event("navigate_to_section", %{"section" => section}, socket) do
+    {:noreply,
+     socket
+     |> assign(active_section: section)
+     |> push_event("scroll_to_section", %{section: section})}
+  end
+
+  def handle_event("section_in_view", %{"section" => section}, socket) do
     {:noreply, assign(socket, active_section: section)}
   end
 
   def render(assigns) do
     ~H"""
-    <div class="min-h-screen bg-journal-cream paper-texture relative overflow-x-hidden">
+    <div
+      class="min-h-screen bg-journal-cream paper-texture relative overflow-x-hidden"
+      phx-hook="ScrollSpy"
+      id="portfolio-container"
+    >
       <!-- Journal Tabs Navigation - Desktop -->
       <.journal_tabs active_section={@active_section} />
       
@@ -112,6 +123,28 @@ defmodule MeksDevWeb.PortfolioLive do
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+      
+    <!-- Placeholder sections for navigation -->
+      <section id="projects" class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="handwritten-bold text-4xl text-journal-charcoal mb-8">Projects</h2>
+          <p class="text-journal-gray">Coming soon...</p>
+        </div>
+      </section>
+
+      <section id="speaking" class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="handwritten-bold text-4xl text-journal-charcoal mb-8">Speaking</h2>
+          <p class="text-journal-gray">Coming soon...</p>
+        </div>
+      </section>
+
+      <section id="writing" class="py-20 px-4 relative">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="handwritten-bold text-4xl text-journal-charcoal mb-8">Writing</h2>
+          <p class="text-journal-gray">Coming soon...</p>
         </div>
       </section>
       
