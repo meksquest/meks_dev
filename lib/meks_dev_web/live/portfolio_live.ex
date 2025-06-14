@@ -122,8 +122,6 @@ defmodule MeksDevWeb.PortfolioLive do
         </div>
       </section>
       
-    <!-- Placeholder sections for navigation -->
-
     <!-- Projects Section -->
       <section id="projects" class="py-20 px-4 relative">
         <div class="max-w-6xl mx-auto">
@@ -208,49 +206,50 @@ defmodule MeksDevWeb.PortfolioLive do
           </h2>
 
           <div class="flex flex-col gap-8">
-            <div class="sketchy-border p-6 ink-bleed organic-hover">
-              <h3 class="handwritten text-2xl text-journal-charcoal mb-2">ElixirConf EU 2024</h3>
-              <h4 class="text-xl text-journal-gray mb-2">
-                The Bookshelf: Engage Your Users with LiveView and Tailwind CSS
-              </h4>
-              <p class="text-journal-gray mb-4">Lisbon, Portugal</p>
-              <div class="flex gap-4">
-                <a
-                  href="https://www.youtube.com/watch?v=lGfVYDyIY5c"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
-                >
-                  📹 Video
-                </a>
-                <a
-                  href="https://github.com/MMcClure11/bookshelf/files/15010688/The.Bookshelf.-.Meks.McClure.pdf"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
-                >
-                  📊 Speaker Deck
-                </a>
-              </div>
-            </div>
+            <.speaking_card
+              conf="Goatmire Sept 10-12, 2025"
+              title="Resiliency: On Designing Adaptable Code and Becoming a Flexible Engineer"
+              location="Varberg, Sweden"
+              announcement_link="https://goatmire.com/talk/resiliency-on-designing-adaptable-code-and-becoming-a-flexible-engineer"
+              coming_soon?={true}
+            />
 
-            <div class="sketchy-border p-6 ink-bleed organic-hover">
-              <h3 class="handwritten text-2xl text-journal-charcoal mb-2">ElixirConf US 2022</h3>
-              <h4 class="text-xl text-journal-gray mb-2">
-                How to Grow Your Own Juniors: A Guide to Mentoring in an Elixir Environment
-              </h4>
-              <p class="text-journal-gray mb-4">Aurora, Colorado, USA</p>
-              <div class="flex gap-4">
-                <a
-                  href="https://www.youtube.com/watch?v=NjFI46Yc2Sc"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
-                >
-                  📹 Video
-                </a>
-                <a
-                  href="https://speakerdeck.com/nkyllonen/how-to-grow-your-own-juniors-a-guide-to-mentoring-in-an-elixir-environment"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
-                >
-                  📊 Speaker Deck
-                </a>
-              </div>
-            </div>
+            <.speaking_card
+              conf="ElixirConf EU 2025"
+              title="LT: Resilient Code, Resilient Engineer: Lessons from Changing Requirements"
+              location="Krakow, Poland"
+              video_link="https://www.youtube.com/watch?v=n2RQtPyCJt8"
+            />
+
+            <.speaking_card
+              conf="ElixirConf EU 2024"
+              title="The Bookshelf: Engage Your Users with LiveView and Tailwind CSS"
+              location="Lisbon, Portugal"
+              video_link="https://www.youtube.com/watch?v=lGfVYDyIY5c"
+              slides_link="https://github.com/MMcClure11/bookshelf/files/15010688/The.Bookshelf.-.Meks.McClure.pdf"
+            />
+
+            <.speaking_card
+              conf="ElixirConf US 2023"
+              title="SVG Island: Building your own charts in LiveView"
+              location="Orlando, Florida, USA"
+              video_link="https://www.youtube.com/watch?v=YDYF8oAC2nE"
+            />
+
+            <.speaking_card
+              conf="ElixirConf US 2022"
+              title="How to Grow Your Own Juniors: A Guide to Mentoring in an Elixir Environment"
+              location="Aurora, Colorado, USA"
+              video_link="https://www.youtube.com/watch?v=NjFI46Yc2Sc"
+              slides_link="https://speakerdeck.com/nkyllonen/how-to-grow-your-own-juniors-a-guide-to-mentoring-in-an-elixir-environment"
+            />
+
+            <.speaking_card
+              conf="Elixir Wizards 2022"
+              title="Meks McClure on Communication, Diversity, & Ergonomics"
+              location="Remote"
+              video_link="https://www.youtube.com/watch?v=jGN-eniKNP8"
+            />
           </div>
         </div>
       </section>
@@ -273,6 +272,47 @@ defmodule MeksDevWeb.PortfolioLive do
           </p>
         </div>
       </footer>
+    </div>
+    """
+  end
+
+  attr :conf, :string, default: ""
+  attr :title, :string, default: ""
+  attr :location, :string, default: ""
+  attr :video_link, :string, default: ""
+  attr :slides_link, :string, default: ""
+  attr :announcement_link, :string, default: ""
+  attr :coming_soon?, :boolean, default: false
+
+  defp speaking_card(assigns) do
+    ~H"""
+    <div class="sketchy-border p-6 ink-bleed organic-hover">
+      <h3 class="handwritten text-2xl text-journal-charcoal mb-2">{@conf}</h3>
+      <h4 class="text-xl text-journal-gray mb-2">{@title}</h4>
+      <p class="text-journal-gray mb-4">{@location}</p>
+      <div class="flex gap-4">
+        <a
+          :if={@video_link != ""}
+          href={@video_link}
+          class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+        >
+          📹 Video
+        </a>
+        <a
+          :if={@slides_link != ""}
+          href={@slides_link}
+          class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+        >
+          📊 Speaker Deck
+        </a>
+        <a
+          :if={@announcement_link != ""}
+          href={@announcement_link}
+          class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+        >
+          🎉 Talk Announcement
+        </a>
+      </div>
     </div>
     """
   end
