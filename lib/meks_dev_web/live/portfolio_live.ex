@@ -199,11 +199,59 @@ defmodule MeksDevWeb.PortfolioLive do
           </div>
         </div>
       </section>
-
+      
+    <!-- Speaking Section -->
       <section id="speaking" class="py-20 px-4 relative">
-        <div class="max-w-4xl mx-auto text-center">
-          <h2 class="handwritten-bold text-4xl text-journal-charcoal mb-8">Speaking</h2>
-          <p class="text-journal-gray">Coming soon...</p>
+        <div class="max-w-5xl mx-auto">
+          <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
+            Speaking
+          </h2>
+
+          <div class="flex flex-col gap-8">
+            <div class="sketchy-border p-6 ink-bleed organic-hover">
+              <h3 class="handwritten text-2xl text-journal-charcoal mb-2">ElixirConf EU 2024</h3>
+              <h4 class="text-xl text-journal-gray mb-2">
+                The Bookshelf: Engage Your Users with LiveView and Tailwind CSS
+              </h4>
+              <p class="text-journal-gray mb-4">Lisbon, Portugal</p>
+              <div class="flex gap-4">
+                <a
+                  href="https://www.youtube.com/watch?v=lGfVYDyIY5c"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  📹 Video
+                </a>
+                <a
+                  href="https://github.com/MMcClure11/bookshelf/files/15010688/The.Bookshelf.-.Meks.McClure.pdf"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  📊 Speaker Deck
+                </a>
+              </div>
+            </div>
+
+            <div class="sketchy-border p-6 ink-bleed organic-hover">
+              <h3 class="handwritten text-2xl text-journal-charcoal mb-2">ElixirConf US 2022</h3>
+              <h4 class="text-xl text-journal-gray mb-2">
+                How to Grow Your Own Juniors: A Guide to Mentoring in an Elixir Environment
+              </h4>
+              <p class="text-journal-gray mb-4">Aurora, Colorado, USA</p>
+              <div class="flex gap-4">
+                <a
+                  href="https://www.youtube.com/watch?v=NjFI46Yc2Sc"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  📹 Video
+                </a>
+                <a
+                  href="https://speakerdeck.com/nkyllonen/how-to-grow-your-own-juniors-a-guide-to-mentoring-in-an-elixir-environment"
+                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                >
+                  📊 Speaker Deck
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
