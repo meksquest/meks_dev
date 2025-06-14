@@ -242,15 +242,15 @@ defmodule MeksDevWeb.PortfolioLive do
             phx-click="navigate_to_section"
             phx-value-section={tab_id}
             class={[
-              "handwritten text-lg px-6 py-4 transform transition-all duration-300 hover:scale-105 relative journal-tab shadow-md hover:shadow-lg",
+              "handwritten text-lg px-6 py-4 transform transition-all duration-300 hover:scale-105 relative journal-tab-enhanced shadow-md hover:shadow-lg",
               if(@active_section == tab_id,
-                do: "bg-journal-charcoal text-journal-white shadow-lg",
-                else: "bg-journal-white hover:bg-journal-cream text-journal-charcoal hover:shadow-xl"
+                do: "ink-gradient-active",
+                else: "text-journal-charcoal hover:shadow-xl"
               )
             ]}
             style={if @active_section == tab_id, do: "transform: translateX(-8px);", else: ""}
           >
-            <span class="relative z-10">{label}</span>
+            <span class="tab-text">{label}</span>
           </button>
         <% end %>
       </div>

@@ -202,3 +202,41 @@
 .border-journal-charcoal { border-color: #2C2C2C; }
 .border-journal-gray-light { border-color: #999999; }
 .border-journal-gray-lighter { border-color: #CCCCCC; }
+
+/* Simple inky gradient for active tabs */
+.ink-gradient-active {
+  background: linear-gradient(135deg,
+    #2C2C2C 0%,
+    #1a1a1a 30%,
+    #2C2C2C 70%,
+    #1a1a1a 100%);
+  color: #F8F6F0 !important; /* cream text */
+  transition: all 0.4s ease;
+  border-color: #1a1a1a;
+}
+
+/* Make sure the text color override is strong enough */
+.ink-gradient-active .tab-text {
+  color: #F8F6F0 !important;
+  font-weight: 500;
+}
+
+/* Enhanced journal tab with smooth transitions */
+.journal-tab-enhanced {
+  position: relative;
+  border: 2px solid #2C2C2C;
+  border-radius: 6px 12px 6px 12px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.journal-tab-enhanced:hover:not(.ink-gradient-active) {
+  background: #F8F6F0;
+  transform: translateY(-2px) rotate(0.5deg);
+}
+
+.journal-tab-enhanced .tab-text {
+  transition: color 0.4s ease;
+  position: relative;
+  z-index: 2;
+}
