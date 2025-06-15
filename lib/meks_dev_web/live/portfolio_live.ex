@@ -65,7 +65,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <%= if @mobile_menu_open do %>
         <div class="lg:hidden fixed inset-0 bg-journal-cream paper-texture z-40 p-8">
           <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <%= for {tab_id, label} <- [{"hero", "meks.dev"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
+            <%= for {tab_id, label} <- [{"hero", "meks.quest"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
               <button
                 phx-click="navigate_to_section"
                 phx-value-section={tab_id}
@@ -82,13 +82,13 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="hero" class="min-h-screen flex items-center justify-center px-4 relative">
         <div class="text-center max-w-4xl mx-auto relative z-10">
           <h1 class="handwritten-bold text-7xl md:text-9xl text-journal-charcoal mb-6 text-write">
-            meks.dev
+            meks.quest
           </h1>
           <p class="text-xl md:text-2xl text-journal-gray mb-4 text-write">
             (they/them)
           </p>
           <h2 class="text-2xl md:text-3xl text-journal-charcoal mb-8 text-write">
-            Developer • Artist • Problem Solver
+            Engineer • Problem Solver • Artist
           </h2>
           <p class="text-lg md:text-xl text-journal-gray max-w-2xl mx-auto leading-relaxed text-write mb-8">
             Elixir & Phoenix specialist who brings artistic sensibility to code architecture and user experience design.
@@ -360,7 +360,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <footer class="py-12 px-4 border-t border-journal-gray-lighter bg-journal-cream">
         <div class="max-w-4xl mx-auto text-center">
           <p class="text-journal-gray mb-2">
-            Built by meks.dev • Powered by Elixir/Phoenix • Hosted on Fly.io
+            Built by meks.quest • Powered by Elixir/Phoenix • Hosted on Fly.io
           </p>
           <p class="handwritten text-journal-charcoal">
             Made with care and lots of tea ❤️
@@ -416,7 +416,7 @@ defmodule MeksDevWeb.PortfolioLive do
     ~H"""
     <div class="hidden lg:block fixed right-8 top-1/2 transform -translate-y-1/2 z-40">
       <div class="flex flex-col space-y-2">
-        <%= for {tab_id, label} <- [{"hero", "meks.dev"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
+        <%= for {tab_id, label} <- [{"hero", "meks.quest"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
           <button
             phx-click="navigate_to_section"
             phx-value-section={tab_id}
