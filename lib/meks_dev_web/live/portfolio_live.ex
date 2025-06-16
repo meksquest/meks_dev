@@ -109,7 +109,7 @@ defmodule MeksDevWeb.PortfolioLive do
               <span class="handwritten text-lg">💼 LinkedIn</span>
             </a>
             <a
-              href="https://github.com/MMcClure11"
+              href="https://github.com/meksquest"
               class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
             >
               <span class="handwritten text-lg">🐙 GitHub</span>
