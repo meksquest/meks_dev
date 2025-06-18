@@ -125,7 +125,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="about" class="py-20 px-4 relative">
         <div class="max-w-4xl mx-auto">
           <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
-            About
+            about
           </h2>
 
           <div class="grid md:grid-cols-2 gap-12">
@@ -166,7 +166,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="projects" class="py-20 px-4 relative">
         <div class="max-w-6xl mx-auto">
           <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
-            Projects
+            projects
           </h2>
 
           <div class="grid md:grid-cols-2 gap-12 mb-12">
@@ -244,7 +244,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="speaking" class="py-20 px-4 relative">
         <div class="max-w-5xl mx-auto">
           <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
-            Speaking
+            speaking
           </h2>
 
           <div class="flex flex-col gap-8">
@@ -300,7 +300,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <section id="writing" class="py-20 px-4 relative">
         <div class="max-w-4xl mx-auto">
           <h2 class="handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center">
-            Writing
+            writing
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8 mb-8">
