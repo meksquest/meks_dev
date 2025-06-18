@@ -187,10 +187,18 @@ defmodule MeksDevWeb.PortfolioLive do
                 />
               </div>
               <div class="flex flex-wrap gap-3 mb-4">
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Elixir</span>
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Phoenix</span>
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">LiveView</span>
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">PostgreSQL</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  Elixir
+                </span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  Phoenix
+                </span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  LiveView
+                </span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  PostgreSQL
+                </span>
               </div>
               <div class="flex gap-4">
                 <a
@@ -221,9 +229,15 @@ defmodule MeksDevWeb.PortfolioLive do
                 />
               </div>
               <div class="flex flex-wrap gap-3 mb-4">
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Elixir</span>
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Phoenix</span>
-                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">LiveView</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  Elixir
+                </span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  Phoenix
+                </span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+                  LiveView
+                </span>
               </div>
               <div class="flex gap-4">
                 <a
@@ -326,10 +340,7 @@ defmodule MeksDevWeb.PortfolioLive do
               <p class="text-journal-gray text-sm mb-4">
                 Travel stories, queer experiences, and personal reflections
               </p>
-              <a
-                href="#"
-                class="text-journal-charcoal hover:text-journal-gray text-sm handwritten"
-              >
+              <a href="#" class="text-journal-charcoal hover:text-journal-gray text-sm handwritten">
                 Coming soon…
               </a>
             </div>
