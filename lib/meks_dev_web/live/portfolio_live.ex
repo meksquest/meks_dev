@@ -8,13 +8,17 @@ defmodule MeksDevWeb.PortfolioLive do
   def handle_event("navigate_to_section", %{"section" => section}, socket) do
     {:noreply,
      socket
-     # Close menu when navigating
+     # Close menu when navigating and set active section immediately
      |> assign(active_section: section, mobile_menu_open: false)
-     |> push_event("scroll_to_section", %{section: section})}
+     |> push_event("scroll_to_section", %{section: section, disable_spy: true})}
   end
 
   def handle_event("section_in_view", %{"section" => section}, socket) do
     {:noreply, assign(socket, active_section: section)}
+  end
+
+  def handle_event("enable_scroll_spy", _params, socket) do
+    {:noreply, socket}
   end
 
   def handle_event("toggle_mobile_menu", _params, socket) do
