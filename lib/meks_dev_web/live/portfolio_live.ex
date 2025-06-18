@@ -340,21 +340,26 @@ defmodule MeksDevWeb.PortfolioLive do
     <!-- Tea Sponsorship Section -->
       <section class="py-16 px-4 bg-journal-cream">
         <div class="max-w-4xl mx-auto text-center">
-          <div class="sketchy-border p-8 ink-bleed organic-hover bg-journal-white mb-8">
-            <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
-              Fuel the Creative Process
-            </h3>
-            <p class="text-journal-gray mb-6 leading-relaxed">
-              If you enjoy my work and want to support my continued exploration of elegant code and creative solutions,
-              consider sponsoring my tea obsession! Every cup of Earl Grey helps fuel late-night coding sessions and sparks new ideas. ☕✨
-            </p>
-            <a
-              href="https://buymeacoffee.com/meks"
-              class="sketchy-border px-8 py-4 bg-journal-white organic-hover handwritten text-xl text-journal-charcoal inline-flex items-center gap-3 gentle-wobble"
-            >
-              <span class="text-2xl">🫖</span>
-              <span>Buy me tea</span>
-            </a>
+          <div class="sketchy-border p-8 ink-bleed organic-hover bg-journal-white mb-8 relative overflow-hidden">
+            <!-- Background vampire sprite -->
+            <.vampire_coffee_sprite class="absolute right-0 bottom-0 h-full object-cover opacity-10 z-0 rotate-6" />
+            
+    <!-- Content with higher z-index -->
+            <div class="relative z-10">
+              <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
+                Fuel the Creative Process
+              </h3>
+              <p class="text-journal-gray mb-6 leading-relaxed">
+                If you enjoy my work and want to support my continued exploration of art, code, and creative solutions,
+                consider sponsoring my tea obsession! Every cup of Chai helps fuel late-night coding and drawing sessions and sparks new ideas.
+              </p>
+              <a
+                href="https://buymeacoffee.com/meks"
+                class="sketchy-border px-8 py-4 bg-journal-white organic-hover handwritten text-xl text-journal-charcoal inline-flex items-center gap-3 gentle-wobble"
+              >
+                <p>buy meks brain fuel</p>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -448,6 +453,18 @@ defmodule MeksDevWeb.PortfolioLive do
       src={~p"/images/drawings/vampire_drawing.svg"}
       alt="Walking vampire"
       class={["vampire-background", @class]}
+    />
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def vampire_coffee_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/vampire_coffee_drawing.svg"}
+      alt="Vampire drinking coffee in a coffin"
+      class={@class}
     />
     """
   end
