@@ -13,32 +13,6 @@
 }
 
 @layer components {
-  /* Sketchy hand-drawn borders */
-  .sketchy-border {
-    @apply relative bg-white;
-    border: none;
-  }
-
-  .sketchy-border::before {
-    content: '';
-    @apply absolute -top-0.5 -left-0.5 -right-0.5 -bottom-0.5;
-    background: none;
-    border: 2px solid #2C2C2C;
-    border-radius: 8px;
-    transform: rotate(0.5deg);
-    z-index: -1;
-  }
-
-  .sketchy-border::after {
-    content: '';
-    @apply absolute -top-px -left-px -right-px -bottom-px;
-    background: none;
-    border: 1px solid #999999;
-    border-radius: 6px;
-    transform: rotate(-0.3deg);
-    z-index: -2;
-  }
-
   /* Paper texture background */
   .paper-texture {
     background-image:
@@ -47,49 +21,6 @@
       radial-gradient(circle at 80px 75px, #F2F0EA 1px, transparent 1px);
     background-size: 100px 100px, 60px 60px, 120px 120px;
     background-position: 0 0, 30px 30px, 60px 0;
-  }
-
-  /* Ink bleed border effect */
-  .ink-bleed {
-    @apply relative transition-all duration-300;
-  }
-
-  .ink-bleed::after {
-    content: '';
-    @apply absolute -top-0.5 -left-0.5 -right-0.5 -bottom-0.5;
-    border: 1px solid rgba(44, 44, 44, 0);
-    border-radius: inherit;
-    transition: all 0.6s ease;
-    z-index: -1;
-  }
-
-  .ink-bleed:hover::after {
-    border-color: rgba(44, 44, 44, 0.3);
-    @apply -top-1 -left-1 -right-1 -bottom-1;
-    box-shadow: 0 0 8px rgba(44, 44, 44, 0.1);
-  }
-
-  /* Text writing animation */
-  .text-write {
-    animation: text-appear 2s ease-out forwards;
-    opacity: 0;
-  }
-
-  @keyframes text-appear {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-      filter: blur(2px);
-    }
-    50% {
-      opacity: 0.7;
-      filter: blur(1px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0);
-    }
   }
 
   /* Handwritten fonts */
@@ -101,37 +32,6 @@
   .handwritten-bold {
     font-family: 'Kalam', cursive;
     font-weight: 700;
-  }
-
-  /* Organic hover animations */
-  .organic-hover {
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .organic-hover:hover {
-    transform: translateY(-2px) rotate(0.3deg);
-    box-shadow: 0 6px 15px rgba(44, 44, 44, 0.08);
-  }
-
-  /* Gentle wobble animation */
-  .gentle-wobble:hover {
-    animation: gentle-wobble 0.6s ease-in-out;
-  }
-
-  @keyframes gentle-wobble {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(0.5deg); }
-    75% { transform: rotate(-0.5deg); }
-  }
-
-  /* Floating animation */
-  .float-gentle {
-    animation: float-gentle 6s ease-in-out infinite;
-  }
-
-  @keyframes float-gentle {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(1deg); }
   }
 
   /* Journal tab styles */
@@ -154,41 +54,6 @@
       6px 12px 24px rgba(0, 0, 0, 0.2),
       0 6px 12px rgba(0, 0, 0, 0.15);
   }
-
-  /* Sketchy tech badges */
-  .sketchy-tech-badge {
-    @apply relative inline-block px-3 py-1.5 bg-white text-gray-800 text-sm cursor-default transition-all duration-300;
-  }
-
-  .sketchy-tech-badge::before {
-    content: '';
-    @apply absolute -top-px -left-px -right-px -bottom-px;
-    background: none;
-    border: 1.5px solid #2C2C2C;
-    border-radius: 4px;
-    transform: rotate(0.5deg);
-    z-index: -2;
-    transition: all 0.3s ease;
-  }
-
-  .sketchy-tech-badge::after {
-    content: '';
-    @apply absolute;
-    top: -0.5px;
-    left: -0.5px;
-    right: -0.5px;
-    bottom: -0.5px;
-    background: none;
-    border: 1px solid #666666;
-    border-radius: 3px;
-    transform: rotate(-0.3deg);
-    z-index: -1;
-    transition: all 0.3s ease;
-  }
-
-  .sketchy-tech-badge:hover {
-    transform: translateY(-1px) rotate(0.2deg);
-  }
 }
 
 /* Custom Tailwind color classes */
@@ -203,44 +68,25 @@
 .border-journal-gray-light { border-color: #999999; }
 .border-journal-gray-lighter { border-color: #CCCCCC; }
 
-/* Simple inky gradient for active tabs - with opacity */
-.ink-gradient-active {
-  background: linear-gradient(135deg,
-    rgba(26, 26, 26, 0.95) 0%,
-    rgba(13, 13, 13, 0.95) 30%,
-    rgba(26, 26, 26, 0.95) 70%,
-    rgba(13, 13, 13, 0.95) 100%);
-  color: #F8F6F0 !important;
-  transition: all 0.4s ease;
-  border-color: #1a1a1a;
-  backdrop-filter: blur(2px);
-}
-
-/* Make sure the text color override is strong enough */
-.ink-gradient-active .tab-text {
-  color: #000000 !important;
-  font-weight: 900;
-}
-
-
 /* Enhanced journal tab with smoother transitions and opacity */
 .journal-tab-enhanced {
   position: relative;
   border: 2px solid #2C2C2C;
   border-radius: 6px 12px 6px 12px;
   background: rgba(255, 255, 255, 0.95); /* 95% opacity instead of solid white */
-  transition: all 0.4s ease;
   overflow: hidden;
   backdrop-filter: blur(2px); /* Subtle blur effect for better readability */
 }
 
-.journal-tab-enhanced:hover:not(.ink-gradient-active) {
+.journal-tab-enhanced.bg-journal-charcoal {
+  background: #2C2C2C !important; /* Override the white background for active state */
+}
+
+.journal-tab-enhanced:hover:not(.bg-journal-charcoal) {
   background: rgba(248, 246, 240, 0.98); /* Slightly more opaque on hover */
-  transform: translateY(-2px) rotate(0.5deg);
 }
 
 .journal-tab-enhanced .tab-text {
-  transition: color 0.4s ease;
   position: relative;
   z-index: 2;
 }

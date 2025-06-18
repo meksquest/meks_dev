@@ -35,7 +35,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <div class="lg:hidden fixed top-4 right-4 z-50">
         <button
           phx-click="toggle_mobile_menu"
-          class="bg-journal-white border-journal-charcoal border-2 rounded p-2 organic-hover"
+          class="bg-journal-white border-journal-charcoal border-2 rounded p-2"
         >
           <%= if @mobile_menu_open do %>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ defmodule MeksDevWeb.PortfolioLive do
               <button
                 phx-click="navigate_to_section"
                 phx-value-section={tab_id}
-                class="handwritten text-3xl text-journal-charcoal hover:text-journal-gray transition-colors organic-hover"
+                class="handwritten text-3xl text-journal-charcoal hover:text-journal-gray"
               >
                 {label}
               </button>
@@ -101,19 +101,19 @@ defmodule MeksDevWeb.PortfolioLive do
           <div class="flex justify-center gap-8 text-write">
             <a
               href="mailto:mmcclure0100@gmail.com"
-              class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
+              class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray group"
             >
               <span class="handwritten text-lg">📧 Email</span>
             </a>
             <a
               href="https://www.linkedin.com/in/meksmcclure/"
-              class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
+              class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray group"
             >
               <span class="handwritten text-lg">💼 LinkedIn</span>
             </a>
             <a
               href="https://github.com/meksquest"
-              class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors organic-hover group"
+              class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray group"
             >
               <span class="handwritten text-lg">🐙 GitHub</span>
             </a>
@@ -129,7 +129,7 @@ defmodule MeksDevWeb.PortfolioLive do
           </h2>
 
           <div class="grid md:grid-cols-2 gap-12">
-            <div class="sketchy-border p-8 ink-bleed organic-hover">
+            <div class="p-8 bg-white">
               <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Professional</h3>
               <p class="text-journal-gray leading-relaxed mb-4">
                 Passionate developer with expertise in building scalable, real-time applications.
@@ -141,18 +141,18 @@ defmodule MeksDevWeb.PortfolioLive do
               </p>
             </div>
 
-            <div class="sketchy-border p-8 ink-bleed organic-hover">
+            <div class="p-8 bg-white">
               <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Beyond the Code</h3>
               <ul class="text-journal-gray space-y-2">
-                <li class="flex items-center gentle-wobble">
+                <li class="flex items-center">
                   <span class="mr-3">☕</span>
                   <span>Tea enthusiast (matcha is ♥️)</span>
                 </li>
-                <li class="flex items-center gentle-wobble">
+                <li class="flex items-center">
                   <span class="mr-3">🎨</span>
                   <span>Journal destroyer & ink consumer</span>
                 </li>
-                <li class="flex items-center gentle-wobble">
+                <li class="flex items-center">
                   <span class="mr-3">🗺️</span>
                   <span>Traveler</span>
                 </li>
@@ -170,67 +170,67 @@ defmodule MeksDevWeb.PortfolioLive do
           </h2>
 
           <div class="grid md:grid-cols-2 gap-12 mb-12">
-            <div class="sketchy-border p-8 ink-bleed organic-hover">
+            <div class="p-8 bg-white">
               <h3 class="handwritten-bold text-3xl text-journal-charcoal mb-4">Quenta</h3>
               <p class="text-journal-gray mb-4">
                 Expense sharing app prototyped with Elixir/Phoenix, and built with Svelt.
               </p>
-              <div class="mb-6 gentle-wobble">
+              <div class="mb-6">
                 <img
                   src={~p"/images/projects/quenta-screenshot.png"}
                   alt="Quenta collaborative storytelling platform screenshot"
-                  class="w-full h-48 object-cover border border-journal-gray-light rounded organic-hover"
+                  class="w-full h-48 object-cover border border-journal-gray-light rounded"
                 />
               </div>
               <div class="flex flex-wrap gap-3 mb-4">
-                <span class="sketchy-tech-badge">Elixir</span>
-                <span class="sketchy-tech-badge">Phoenix</span>
-                <span class="sketchy-tech-badge">LiveView</span>
-                <span class="sketchy-tech-badge">PostgreSQL</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Elixir</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Phoenix</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">LiveView</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">PostgreSQL</span>
               </div>
               <div class="flex gap-4">
                 <a
                   href="https://github.com/MMcClure11/quenta/tree/main/elixir"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                  class="text-journal-charcoal hover:text-journal-gray handwritten"
                 >
                   Elixir Prototype GitHub
                 </a>
                 <a
                   href="https://ex.quenta.pro/"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                  class="text-journal-charcoal hover:text-journal-gray handwritten"
                 >
                   Elixir Prototype Live
                 </a>
               </div>
             </div>
 
-            <div class="sketchy-border p-8 ink-bleed organic-hover">
+            <div class="p-8 bg-white">
               <h3 class="handwritten-bold text-3xl text-journal-charcoal mb-4">Bookshelf</h3>
               <p class="text-journal-gray mb-4">
                 A virtual library of all the books you want to keep tabs on, those sneaky buggers tend to run off in search of adventure.
               </p>
-              <div class="mb-6 gentle-wobble">
+              <div class="mb-6">
                 <img
                   src={~p"/images/projects/bookshelf-screenshot.png"}
                   alt="Bookshelf book management system screenshot"
-                  class="w-full h-48 object-cover border border-journal-gray-light rounded organic-hover"
+                  class="w-full h-48 object-cover border border-journal-gray-light rounded"
                 />
               </div>
               <div class="flex flex-wrap gap-3 mb-4">
-                <span class="sketchy-tech-badge">Elixir</span>
-                <span class="sketchy-tech-badge">Phoenix</span>
-                <span class="sketchy-tech-badge">LiveView</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Elixir</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">Phoenix</span>
+                <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">LiveView</span>
               </div>
               <div class="flex gap-4">
                 <a
                   href="https://github.com/MMcClure11/bookshelf"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                  class="text-journal-charcoal hover:text-journal-gray handwritten"
                 >
                   GitHub
                 </a>
                 <a
                   href="https://bookshelf-meks.fly.dev/"
-                  class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+                  class="text-journal-charcoal hover:text-journal-gray handwritten"
                 >
                   Live
                 </a>
@@ -304,27 +304,27 @@ defmodule MeksDevWeb.PortfolioLive do
           </h2>
 
           <div class="grid md:grid-cols-2 gap-8 mb-8">
-            <div class="sketchy-border p-6 ink-bleed organic-hover">
+            <div class="p-6 bg-white">
               <h3 class="handwritten text-xl text-journal-charcoal mb-4">Technical Deep Dives</h3>
               <p class="text-journal-gray text-sm mb-4">
                 In-depth explorations of Elixir, Phoenix, and LiveView concepts
               </p>
               <a
                 href="https://dev.to/mmcclure11"
-                class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors text-sm handwritten"
+                class="text-journal-charcoal hover:text-journal-gray text-sm handwritten"
               >
                 Read articles →
               </a>
             </div>
 
-            <div class="sketchy-border p-6 ink-bleed organic-hover">
+            <div class="p-6 bg-white">
               <h3 class="handwritten text-xl text-journal-charcoal mb-4">Life & Perspectives</h3>
               <p class="text-journal-gray text-sm mb-4">
                 Travel stories, queer experiences, and personal reflections
               </p>
               <a
                 href="#"
-                class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors text-sm handwritten"
+                class="text-journal-charcoal hover:text-journal-gray text-sm handwritten"
               >
                 Coming soon…
               </a>
@@ -340,7 +340,7 @@ defmodule MeksDevWeb.PortfolioLive do
     <!-- Tea Sponsorship Section -->
       <section class="py-16 px-4 bg-journal-cream">
         <div class="max-w-4xl mx-auto text-center">
-          <div class="sketchy-border p-8 ink-bleed organic-hover bg-journal-white mb-8 relative overflow-hidden">
+          <div class="p-8 bg-journal-white mb-8 relative overflow-hidden">
             <!-- Background vampire sprite -->
             <.vampire_coffee_sprite class="absolute right-0 bottom-0 h-full object-cover opacity-10 z-0 rotate-6" />
             
@@ -355,7 +355,7 @@ defmodule MeksDevWeb.PortfolioLive do
               </p>
               <a
                 href="https://buymeacoffee.com/meks"
-                class="sketchy-border px-8 py-4 bg-journal-white organic-hover handwritten text-xl text-journal-charcoal inline-flex items-center gap-3 gentle-wobble"
+                class="sketchy-border px-8 py-4 bg-journal-white handwritten text-xl text-journal-charcoal inline-flex items-center gap-3"
               >
                 <p>buy meks brain fuel</p>
               </a>
@@ -389,7 +389,7 @@ defmodule MeksDevWeb.PortfolioLive do
 
   defp speaking_card(assigns) do
     ~H"""
-    <div class="sketchy-border p-6 ink-bleed organic-hover">
+    <div class="p-6">
       <h3 class="handwritten text-2xl text-journal-charcoal mb-2">{@conf}</h3>
       <h4 class="text-xl text-journal-gray mb-2">{@title}</h4>
       <p class="text-journal-gray mb-4">{@location}</p>
@@ -397,21 +397,21 @@ defmodule MeksDevWeb.PortfolioLive do
         <a
           :if={@video_link != ""}
           href={@video_link}
-          class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+          class="text-journal-charcoal hover:text-journal-gray handwritten"
         >
           📹 Video
         </a>
         <a
           :if={@slides_link != ""}
           href={@slides_link}
-          class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+          class="text-journal-charcoal hover:text-journal-gray handwritten"
         >
           📊 Speaker Deck
         </a>
         <a
           :if={@announcement_link != ""}
           href={@announcement_link}
-          class="organic-hover text-journal-charcoal hover:text-journal-gray transition-colors handwritten"
+          class="text-journal-charcoal hover:text-journal-gray handwritten"
         >
           🎉 Talk Announcement
         </a>
@@ -429,13 +429,12 @@ defmodule MeksDevWeb.PortfolioLive do
             phx-click="navigate_to_section"
             phx-value-section={tab_id}
             class={[
-              "handwritten text-lg px-6 py-4 transform transition-all duration-300 hover:scale-105 relative journal-tab-enhanced shadow-md hover:shadow-lg",
+              "handwritten text-lg px-6 py-4 relative journal-tab-enhanced shadow-md",
               if(@active_section == tab_id,
-                do: "ink-gradient-active",
-                else: "text-journal-charcoal hover:shadow-xl"
+                do: "bg-journal-charcoal text-journal-cream",
+                else: "text-journal-charcoal"
               )
             ]}
-            style={if @active_section == tab_id, do: "transform: translateX(-8px);", else: ""}
           >
             <span class="tab-text">{label}</span>
           </button>
