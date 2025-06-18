@@ -80,6 +80,9 @@ defmodule MeksDevWeb.PortfolioLive do
       
     <!-- Hero Section -->
       <section id="hero" class="min-h-screen flex items-center justify-center px-4 relative">
+        <!-- Vampire drawing as background -->
+        <.vampire_sprite class="text-write absolute z-0" />
+
         <div class="text-center max-w-4xl mx-auto relative z-10">
           <h1 class="handwritten-bold text-7xl md:text-9xl text-journal-charcoal mb-6 text-write">
             meks.quest
@@ -434,6 +437,18 @@ defmodule MeksDevWeb.PortfolioLive do
         <% end %>
       </div>
     </div>
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def vampire_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/vampire_drawing.svg"}
+      alt="Walking vampire"
+      class={["vampire-background", @class]}
+    />
     """
   end
 end
