@@ -2,7 +2,8 @@ defmodule MeksDevWeb.PortfolioLive do
   use MeksDevWeb, :live_view
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, active_section: "hero", mobile_menu_open: false)}
+    {:ok,
+     assign(socket, active_section: "hero", mobile_menu_open: false, dino_speech_visible: false)}
   end
 
   def handle_event("navigate_to_section", %{"section" => section}, socket) do
@@ -25,6 +26,10 @@ defmodule MeksDevWeb.PortfolioLive do
     {:noreply, assign(socket, mobile_menu_open: !socket.assigns.mobile_menu_open)}
   end
 
+  def handle_event("toggle_dino_speech", _params, socket) do
+    {:noreply, assign(socket, dino_speech_visible: !socket.assigns.dino_speech_visible)}
+  end
+
   def render(assigns) do
     ~H"""
     <div
@@ -45,7 +50,7 @@ defmodule MeksDevWeb.PortfolioLive do
       <.hero_section />
       
     <!-- About Section -->
-      <.about_section />
+      <.about_section dino_speech_visible={@dino_speech_visible} />
       
     <!-- Projects Section -->
       <.projects_section />
@@ -90,7 +95,7 @@ defmodule MeksDevWeb.PortfolioLive do
 
   defp content_card(assigns) do
     ~H"""
-    <div class={["p-8 bg-white", @class]}>
+    <div class={["p-8 bg-white/90", @class]}>
       {render_slot(@inner_block)}
     </div>
     """
@@ -298,7 +303,7 @@ defmodule MeksDevWeb.PortfolioLive do
         <h2 class="text-3xl md:text-4xl text-journal-charcoal mb-8 text-write">
           (they/them)
         </h2>
-        <p class="text-xl md:text-2xl text-journal-gray max-w-2xl mx-auto leading-relaxed text-write mb-8">
+        <p class="text-xl md:text-2xl text-journal-charcoal max-w-2xl mx-auto leading-relaxed text-write mb-8">
           Artist-engineer in flux, dancing between ink and sparkles, crafting peculiar spells with intention.
         </p>
         
@@ -316,7 +321,20 @@ defmodule MeksDevWeb.PortfolioLive do
   defp about_section(assigns) do
     ~H"""
     <section id="about" class="py-20 px-4 relative">
-      <div class="max-w-4xl mx-auto">
+      <.t_rex_sprite
+        phx_click="toggle_dino_speech"
+        class="absolute z-0 left-2 -top-4 opacity-40 w-64 filter hover:drop-shadow-lg"
+      />
+      
+    <!-- Speech bubble -->
+      <div
+        :if={@dino_speech_visible}
+        class="absolute z-10 left-52 top-2 bg-white rounded-2xl px-4 py-2 shadow-md border border-journal-gray-light"
+      >
+        <p class="handwritten text-lg text-journal-charcoal">"meks" it rhymes with t-rex!</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto relative z-10">
         <.section_header title="about" />
 
         <div class="grid md:grid-cols-2 gap-12">
@@ -491,14 +509,14 @@ defmodule MeksDevWeb.PortfolioLive do
       <div class="max-w-4xl mx-auto text-center">
         <div class="p-8 bg-journal-white mb-8 relative overflow-hidden">
           <!-- Background vampire sprite -->
-          <.vampire_coffee_sprite class="absolute right-0 bottom-0 h-full object-cover opacity-10 z-0 rotate-6" />
+          <.vampire_coffee_sprite class="absolute right-0 bottom-0 sm:h-full object-cover opacity-10 z-0 rotate-6" />
           
     <!-- Content with higher z-index -->
           <div class="relative z-10">
             <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
               Fuel the Creative Process
             </h3>
-            <p class="text-journal-gray mb-6 leading-relaxed">
+            <p class="text-journal-charcoal mb-6 leading-relaxed">
               If you enjoy my work and want to support my continued exploration of art, code, and creative solutions,
               consider sponsoring my tea obsession! Every cup of Chai helps fuel late-night coding and drawing sessions and sparks new ideas.
             </p>
@@ -604,6 +622,23 @@ defmodule MeksDevWeb.PortfolioLive do
       src={~p"/images/drawings/vampire_coffee_drawing.svg"}
       alt="Vampire drinking coffee in a coffin"
       class={@class}
+    />
+    """
+  end
+
+  attr :class, :string, default: ""
+  attr :phx_click, :string, default: ""
+
+  def t_rex_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/t_rex_drawing.svg"}
+      alt="T-rex with a pumpkin basket and skull mask"
+      phx-click={@phx_click}
+      class={[
+        "cursor-pointer transition-all duration-300 hover:scale-105 hover:opacity-80",
+        @class
+      ]}
     />
     """
   end
