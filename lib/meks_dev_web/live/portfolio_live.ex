@@ -287,17 +287,14 @@ defmodule MeksDevWeb.PortfolioLive do
       <.vampire_sprite class="text-write absolute z-0" />
 
       <div class="text-center max-w-4xl mx-auto relative z-10">
-        <h1 class="handwritten-bold text-7xl md:text-9xl text-journal-charcoal mb-6 text-write">
+        <h1 class="handwritten-bold text-7xl md:text-9xl text-journal-charcoal mb-8 text-write">
           meks.quest
         </h1>
-        <p class="text-xl md:text-2xl text-journal-gray mb-4 text-write">
+        <h2 class="text-3xl md:text-4xl text-journal-charcoal mb-8 text-write">
           (they/them)
-        </p>
-        <h2 class="text-2xl md:text-3xl text-journal-charcoal mb-8 text-write">
-          Engineer • Problem Solver • Artist
         </h2>
-        <p class="text-lg md:text-xl text-journal-gray max-w-2xl mx-auto leading-relaxed text-write mb-8">
-          Elixir & Phoenix specialist who brings artistic sensibility to code architecture and user experience design.
+        <p class="text-xl md:text-2xl text-journal-gray max-w-2xl mx-auto leading-relaxed text-write mb-8">
+          Artist-engineer in flux, dancing between ink and sparkles, crafting peculiar spells with intention.
         </p>
         
         <!-- Quick Contact Links -->
@@ -333,31 +330,32 @@ defmodule MeksDevWeb.PortfolioLive do
           <.content_card>
             <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Professional</h3>
             <p class="text-journal-gray leading-relaxed mb-4">
-              Passionate developer with expertise in building scalable, real-time applications.
-              I specialize in LiveView with Phoenix and Elixir, functional programming, and creating elegant solutions to complex problems.
+              I’m an artist-engineer in flux, crafting small, intentional
+              systems with care and curiosity. My work lives at the
+              intersection of elegance and precision—whether I’m building with
+              Elixir and Phoenix, tuning my NeoVim config, or speaking at a
+              conference.
             </p>
             <p class="text-journal-gray leading-relaxed">
-              Active in LGBTQIA+ leadership, helping grow the next generation of developers
-              through inclusive practices, community building, and education.
+              I value sharing what I learn—through talks, writing, and quiet
+              collaboration. I believe in building tools that feel like they
+              belong: focused, human, and a little bit magical.
             </p>
           </.content_card>
 
           <.content_card>
             <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Beyond the Code</h3>
-            <ul class="text-journal-gray space-y-2">
-              <li class="flex items-center">
-                <span class="mr-3">☕</span>
-                <span>Tea enthusiast (matcha is ♥️)</span>
-              </li>
-              <li class="flex items-center">
-                <span class="mr-3">🎨</span>
-                <span>Journal destroyer & ink consumer</span>
-              </li>
-              <li class="flex items-center">
-                <span class="mr-3">🗺️</span>
-                <span>Traveler</span>
-              </li>
-            </ul>
+            <p class="text-journal-gray leading-relaxed mb-4">
+              I live on the road, always moving, always learning. Queerness and
+              transition shape how I experience the world—fluid, layered, soft
+              yet sharp at the edges. I sketch dragons in ink, I sleep beside a
+              sparkly bumblecorn, and I write about my travels, the systems I
+              build, and the things I notice along the way.
+            </p>
+            <p class="text-journal-gray leading-relaxed">
+              This site is part of the trail I leave behind. Thanks for walking
+              through it.
+            </p>
           </.content_card>
         </div>
       </div>
