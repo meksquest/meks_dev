@@ -506,24 +506,23 @@ defmodule MeksDevWeb.PortfolioLive do
   defp tea_sponsorship_section(assigns) do
     ~H"""
     <section class="py-16 px-4 bg-journal-cream">
-      <div class="max-w-4xl mx-auto text-center">
-        <div class="p-8 bg-journal-white mb-8 relative overflow-hidden">
-          <!-- Background vampire sprite -->
-          <.vampire_coffee_sprite class="absolute right-0 bottom-0 sm:h-full object-cover opacity-10 z-0 rotate-6" />
-          
-    <!-- Content with higher z-index -->
-          <div class="relative z-10">
-            <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
-              Fuel the Creative Process
-            </h3>
-            <p class="text-journal-charcoal mb-6 leading-relaxed">
-              If you enjoy my work and want to support my continued exploration of art, code, and creative solutions,
-              consider sponsoring my tea obsession! Every cup of Chai helps fuel late-night coding and drawing sessions and sparks new ideas.
-            </p>
-            <.primary_button href="https://buymeacoffee.com/meks" class="handwritten text-xl">
-              buy meks brain fuel
-            </.primary_button>
-          </div>
+      <div class="max-w-4xl mx-auto text-center relative">
+        <.vampire_coffee_sprite class="
+          absolute left-1/2 transform -translate-x-1/2 top-[85%] w-48 mt-8
+          md:left-auto md:right-4 md:-bottom-12 md:top-auto md:transform-none md:w-[18rem] md:opacity-60
+          object-cover opacity-80 z-10 rotate-6
+        " />
+        <div class="p-8 bg-journal-white mb-8">
+          <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
+            Fuel the Creative Process
+          </h3>
+          <p class="text-journal-charcoal mb-6 leading-relaxed">
+            If you enjoy my work and want to support my continued exploration of art, code, and creative solutions,
+            consider sponsoring my tea obsession! Every cup of Chai helps fuel late-night coding and drawing sessions and sparks new ideas.
+          </p>
+          <.primary_button href="https://buymeacoffee.com/meks" class="handwritten text-xl">
+            buy meks brain fuel
+          </.primary_button>
         </div>
       </div>
     </section>
