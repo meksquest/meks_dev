@@ -160,7 +160,7 @@ defmodule MeksDevWeb.PortfolioLive do
       href={@href}
       class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors duration-200 group md:hover:scale-110 md:transition-transform md:duration-200"
     >
-      <span class="handwritten text-lg md:group-hover:scale-110 md:transition-transform md:duration-200 border border-gray-200 rounded px-2 py-1 md:border-0 md:px-0 md:py-0">
+      <span class="handwritten text-lg md:group-hover:scale-110 md:transition-transform md:duration-200 underline px-2 py-1">
         {@icon} {@text}
       </span>
     </a>
@@ -180,7 +180,7 @@ defmodule MeksDevWeb.PortfolioLive do
         "text-gray-800 hover:text-gray-500 transition-all duration-200 inline-block",
         "md:hover:scale-105",
         "font-medium",
-        "border border-gray-200 rounded px-2 py-1 md:border-0 md:px-0 md:py-0",
+        "underline px-2 py-1",
         @class
       ]}
     >
@@ -323,16 +323,17 @@ defmodule MeksDevWeb.PortfolioLive do
           <.content_card>
             <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Professional</h3>
             <p class="text-journal-gray leading-relaxed mb-4">
-              I’m an artist-engineer in flux, crafting small, intentional
+              I’m an artist-engineer crafting small, intentional
               systems with care and curiosity. My work lives at the
               intersection of elegance and precision—whether I’m building with
-              Elixir and Phoenix, tuning my NeoVim config, or speaking at a
-              conference.
+              Elixir and Phoenix, tuning my NeoVim config, or shaping focused
+              tools that do one thing well.
             </p>
             <p class="text-journal-gray leading-relaxed">
-              I value sharing what I learn—through talks, writing, and quiet
-              collaboration. I believe in building tools that feel like they
-              belong: focused, human, and a little bit magical.
+              I’ve presented at several Elixir conferences, where I share the
+              joy of strange abstractions, practical design, and soft,
+              human-centered tooling. I write to explore, speak to connect, and
+              build to create space—for others, and for myself.
             </p>
           </.content_card>
 
@@ -341,9 +342,9 @@ defmodule MeksDevWeb.PortfolioLive do
             <p class="text-journal-gray leading-relaxed mb-4">
               I live on the road, always moving, always learning. Queerness and
               transition shape how I experience the world—fluid, layered, soft
-              yet sharp at the edges. I sketch dragons in ink, I sleep beside a
-              sparkly bumblecorn, and I write about my travels, the systems I
-              build, and the things I notice along the way.
+              at the edges, sharp at the heart. I sketch dragons in ink, I
+              sleep beside a sparkly bumblecorn, and I write about my travels,
+              the systems I build, and the things I notice along the way.
             </p>
             <p class="text-journal-gray leading-relaxed">
               This site is part of the trail I leave behind. Thanks for walking
@@ -467,13 +468,12 @@ defmodule MeksDevWeb.PortfolioLive do
           </.content_card>
 
           <.content_card class="p-6">
-            <h3 class="handwritten text-xl text-journal-charcoal mb-4">Life & Perspectives</h3>
+            <h3 class="handwritten text-xl text-journal-charcoal mb-4">
+              Life & Perspectives (coming July 2025)
+            </h3>
             <p class="text-journal-gray text-sm mb-4">
-              Travel stories, queer experiences, and personal reflections
+              Stories from the road, queer life, and creative coding.
             </p>
-            <.styled_link href="#" class="text-sm">
-              Coming soon…
-            </.styled_link>
           </.content_card>
         </div>
 
