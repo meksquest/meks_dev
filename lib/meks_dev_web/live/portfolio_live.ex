@@ -93,14 +93,56 @@ defmodule MeksDevWeb.PortfolioLive do
     """
   end
 
-  # Tech Badge Component
+  # Tech Badge Component (less button-like)
   attr :tech, :string, required: true
 
   defp tech_badge(assigns) do
     ~H"""
-    <span class="bg-journal-charcoal text-journal-cream px-3 py-1.5 text-sm rounded">
+    <span class="inline-block px-2 py-1 text-xs text-journal-gray bg-journal-gray-lighter rounded border border-journal-gray-light">
       {@tech}
     </span>
+    """
+  end
+
+  # Primary Button Component
+  attr :href, :string, required: true
+  attr :class, :string, default: ""
+  slot :inner_block, required: true
+
+  defp primary_button(assigns) do
+    ~H"""
+    <a
+      href={@href}
+      class={[
+        "inline-flex items-center gap-2 px-6 py-3 bg-journal-charcoal text-journal-cream rounded-lg",
+        "hover:bg-journal-gray transition-colors duration-200",
+        "font-medium shadow-sm hover:shadow-md",
+        @class
+      ]}
+    >
+      <%= render_slot(@inner_block) %>
+    </a>
+    """
+  end
+
+  # Secondary Button Component
+  attr :href, :string, required: true
+  attr :class, :string, default: ""
+  slot :inner_block, required: true
+
+  defp secondary_button(assigns) do
+    ~H"""
+    <a
+      href={@href}
+      class={[
+        "inline-flex items-center gap-2 px-4 py-2 border-2 border-journal-charcoal text-journal-charcoal rounded-lg",
+        "hover:bg-journal-charcoal hover:text-journal-cream transition-all duration-200",
+        "font-medium shadow-sm hover:shadow-md",
+        @class
+      ]}
+    >
+      <%= render_slot(@inner_block) %>
+    </a>
     """
   end
 
@@ -113,9 +155,28 @@ defmodule MeksDevWeb.PortfolioLive do
     ~H"""
     <a
       href={@href}
-      class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray group"
+      class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors duration-200 group"
     >
-      <span class="handwritten text-lg">{@icon} {@text}</span>
+      <span class="handwritten text-lg group-hover:scale-110 transition-transform duration-200">{@icon} {@text}</span>
+    </a>
+    """
+  end
+
+  # Styled Link Component (based on contact_link styling)
+  attr :href, :string, required: true
+  attr :class, :string, default: ""
+  slot :inner_block, required: true
+
+  defp styled_link(assigns) do
+    ~H"""
+    <a
+      href={@href}
+      class={[
+        "text-gray-800 hover:text-gray-500 transition-all duration-200 hover:scale-105 inline-block",
+        @class
+      ]}
+    >
+      <%= render_slot(@inner_block) %>
     </a>
     """
   end
@@ -142,20 +203,17 @@ defmodule MeksDevWeb.PortfolioLive do
         />
       </div>
       
-      <div class="flex flex-wrap gap-3 mb-4">
+      <div class="flex flex-wrap gap-2 mb-6">
         <%= for tech <- @tech_stack do %>
           <.tech_badge tech={tech} />
         <% end %>
       </div>
       
-      <div class="flex gap-4">
+      <div class="flex gap-3">
         <%= for {text, href} <- @links do %>
-          <a
-            href={href}
-            class="text-journal-charcoal hover:text-journal-gray handwritten"
-          >
+          <.secondary_button href={href}>
             {text}
-          </a>
+          </.secondary_button>
         <% end %>
       </div>
     </.content_card>
@@ -409,12 +467,9 @@ defmodule MeksDevWeb.PortfolioLive do
             <p class="text-journal-gray text-sm mb-4">
               In-depth explorations of Elixir, Phoenix, and LiveView concepts
             </p>
-            <a
-              href="https://dev.to/mmcclure11"
-              class="text-journal-charcoal hover:text-journal-gray text-sm handwritten"
-            >
+            <.styled_link href="https://dev.to/mmcclure11" class="text-sm">
               Read articles →
-            </a>
+            </.styled_link>
           </.content_card>
 
           <.content_card class="p-6">
@@ -422,9 +477,9 @@ defmodule MeksDevWeb.PortfolioLive do
             <p class="text-journal-gray text-sm mb-4">
               Travel stories, queer experiences, and personal reflections
             </p>
-            <a href="#" class="text-journal-charcoal hover:text-journal-gray text-sm handwritten">
+            <.styled_link href="#" class="text-sm">
               Coming soon…
-            </a>
+            </.styled_link>
           </.content_card>
         </div>
 
@@ -453,12 +508,9 @@ defmodule MeksDevWeb.PortfolioLive do
               If you enjoy my work and want to support my continued exploration of art, code, and creative solutions,
               consider sponsoring my tea obsession! Every cup of Chai helps fuel late-night coding and drawing sessions and sparks new ideas.
             </p>
-            <a
-              href="https://buymeacoffee.com/meks"
-              class="sketchy-border px-8 py-4 bg-journal-white handwritten text-xl text-journal-charcoal inline-flex items-center gap-3"
-            >
-              <p>buy meks brain fuel</p>
-            </a>
+            <.primary_button href="https://buymeacoffee.com/meks" class="handwritten text-xl">
+              buy meks brain fuel
+            </.primary_button>
           </div>
         </div>
       </div>
@@ -500,27 +552,15 @@ defmodule MeksDevWeb.PortfolioLive do
       <h4 class="text-xl text-journal-gray mb-2">{@title}</h4>
       <p class="text-journal-gray mb-4">{@location}</p>
       <div class="flex gap-4">
-        <a
-          :if={@video_link != ""}
-          href={@video_link}
-          class="text-journal-charcoal hover:text-journal-gray handwritten"
-        >
+        <.styled_link :if={@video_link != ""} href={@video_link}>
           📹 Video
-        </a>
-        <a
-          :if={@slides_link != ""}
-          href={@slides_link}
-          class="text-journal-charcoal hover:text-journal-gray handwritten"
-        >
+        </.styled_link>
+        <.styled_link :if={@slides_link != ""} href={@slides_link}>
           📊 Speaker Deck
-        </a>
-        <a
-          :if={@announcement_link != ""}
-          href={@announcement_link}
-          class="text-journal-charcoal hover:text-journal-gray handwritten"
-        >
+        </.styled_link>
+        <.styled_link :if={@announcement_link != ""} href={@announcement_link}>
           🎉 Talk Announcement
-        </a>
+        </.styled_link>
       </div>
     </div>
     """

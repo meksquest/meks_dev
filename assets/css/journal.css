@@ -64,6 +64,8 @@
 .text-journal-white { color: #FFFFFF; }
 .text-journal-charcoal { color: #2C2C2C; }
 .text-journal-gray { color: #666666; }
+.text-journal-gray-light { color: #999999; }
+.text-journal-gray-lighter { color: #CCCCCC; }
 .border-journal-charcoal { border-color: #2C2C2C; }
 .border-journal-gray-light { border-color: #999999; }
 .border-journal-gray-lighter { border-color: #CCCCCC; }
