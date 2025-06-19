@@ -35,31 +35,31 @@ defmodule MeksDevWeb.PortfolioLive do
       <!-- Journal Tabs Navigation - Desktop -->
       <.journal_tabs active_section={@active_section} />
       
-      <!-- Mobile Navigation -->
+    <!-- Mobile Navigation -->
       <.mobile_nav mobile_menu_open={@mobile_menu_open} />
       
-      <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu Overlay -->
       <.mobile_menu_overlay mobile_menu_open={@mobile_menu_open} />
       
-      <!-- Hero Section -->
+    <!-- Hero Section -->
       <.hero_section />
       
-      <!-- About Section -->
+    <!-- About Section -->
       <.about_section />
       
-      <!-- Projects Section -->
+    <!-- Projects Section -->
       <.projects_section />
       
-      <!-- Speaking Section -->
+    <!-- Speaking Section -->
       <.speaking_section />
       
-      <!-- Writing Section -->
+    <!-- Writing Section -->
       <.writing_section />
       
-      <!-- Tea Sponsorship Section -->
+    <!-- Tea Sponsorship Section -->
       <.tea_sponsorship_section />
       
-      <!-- Footer -->
+    <!-- Footer -->
       <.footer />
     </div>
     """
@@ -75,7 +75,10 @@ defmodule MeksDevWeb.PortfolioLive do
 
   defp section_header(assigns) do
     ~H"""
-    <h2 class={["handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center", @class]}>
+    <h2 class={[
+      "handwritten-bold text-4xl md:text-5xl text-journal-charcoal mb-12 text-center",
+      @class
+    ]}>
       {@title}
     </h2>
     """
@@ -88,7 +91,7 @@ defmodule MeksDevWeb.PortfolioLive do
   defp content_card(assigns) do
     ~H"""
     <div class={["p-8 bg-white", @class]}>
-      <%= render_slot(@inner_block) %>
+      {render_slot(@inner_block)}
     </div>
     """
   end
@@ -120,7 +123,7 @@ defmodule MeksDevWeb.PortfolioLive do
         @class
       ]}
     >
-      <%= render_slot(@inner_block) %>
+      {render_slot(@inner_block)}
     </a>
     """
   end
@@ -141,7 +144,7 @@ defmodule MeksDevWeb.PortfolioLive do
         @class
       ]}
     >
-      <%= render_slot(@inner_block) %>
+      {render_slot(@inner_block)}
     </a>
     """
   end
@@ -157,7 +160,9 @@ defmodule MeksDevWeb.PortfolioLive do
       href={@href}
       class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors duration-200 group md:hover:scale-110 md:transition-transform md:duration-200"
     >
-      <span class="handwritten text-lg md:group-hover:scale-110 md:transition-transform md:duration-200 border border-gray-200 rounded px-2 py-1 md:border-0 md:px-0 md:py-0">{@icon} {@text}</span>
+      <span class="handwritten text-lg md:group-hover:scale-110 md:transition-transform md:duration-200 border border-gray-200 rounded px-2 py-1 md:border-0 md:px-0 md:py-0">
+        {@icon} {@text}
+      </span>
     </a>
     """
   end
@@ -179,7 +184,7 @@ defmodule MeksDevWeb.PortfolioLive do
         @class
       ]}
     >
-      <%= render_slot(@inner_block) %>
+      {render_slot(@inner_block)}
     </a>
     """
   end
@@ -197,7 +202,7 @@ defmodule MeksDevWeb.PortfolioLive do
     <.content_card>
       <h3 class="handwritten-bold text-3xl text-journal-charcoal mb-4">{@title}</h3>
       <p class="text-journal-gray mb-4">{@description}</p>
-      
+
       <div class="mb-6">
         <img
           src={@image_src}
@@ -205,13 +210,13 @@ defmodule MeksDevWeb.PortfolioLive do
           class="w-full h-48 object-cover border border-journal-gray-light rounded"
         />
       </div>
-      
+
       <div class="flex flex-wrap gap-2 mb-6">
         <%= for tech <- @tech_stack do %>
           <.tech_badge tech={tech} />
         <% end %>
       </div>
-      
+
       <div class="flex gap-3">
         <%= for {text, href} <- @links do %>
           <.secondary_button href={href}>
@@ -297,23 +302,11 @@ defmodule MeksDevWeb.PortfolioLive do
           Artist-engineer in flux, dancing between ink and sparkles, crafting peculiar spells with intention.
         </p>
         
-        <!-- Quick Contact Links -->
+    <!-- Quick Contact Links -->
         <div class="flex justify-center gap-8 text-write">
-          <.contact_link 
-            href="mailto:mmcclure0100@gmail.com"
-            icon="📧"
-            text="Email"
-          />
-          <.contact_link 
-            href="https://www.linkedin.com/in/meksmcclure/"
-            icon="💼"
-            text="LinkedIn"
-          />
-          <.contact_link 
-            href="https://github.com/meksquest"
-            icon="🐙"
-            text="GitHub"
-          />
+          <.contact_link href="mailto:mmcclure0100@gmail.com" icon="📧" text="Email" />
+          <.contact_link href="https://www.linkedin.com/in/meksmcclure/" icon="💼" text="LinkedIn" />
+          <.contact_link href="https://github.com/meksquest" icon="🐙" text="GitHub" />
         </div>
       </div>
     </section>
@@ -500,7 +493,7 @@ defmodule MeksDevWeb.PortfolioLive do
           <!-- Background vampire sprite -->
           <.vampire_coffee_sprite class="absolute right-0 bottom-0 h-full object-cover opacity-10 z-0 rotate-6" />
           
-          <!-- Content with higher z-index -->
+    <!-- Content with higher z-index -->
           <div class="relative z-10">
             <h3 class="handwritten-bold text-2xl text-journal-charcoal mb-4">
               Fuel the Creative Process
