@@ -155,9 +155,9 @@ defmodule MeksDevWeb.PortfolioLive do
     ~H"""
     <a
       href={@href}
-      class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors duration-200 group"
+      class="flex items-center gap-2 text-journal-charcoal hover:text-journal-gray transition-colors duration-200 group md:hover:scale-110 md:transition-transform md:duration-200"
     >
-      <span class="handwritten text-lg group-hover:scale-110 transition-transform duration-200">{@icon} {@text}</span>
+      <span class="handwritten text-lg md:group-hover:scale-110 md:transition-transform md:duration-200 border border-gray-200 rounded px-2 py-1 md:border-0 md:px-0 md:py-0">{@icon} {@text}</span>
     </a>
     """
   end
@@ -172,7 +172,10 @@ defmodule MeksDevWeb.PortfolioLive do
     <a
       href={@href}
       class={[
-        "text-gray-800 hover:text-gray-500 transition-all duration-200 hover:scale-105 inline-block",
+        "text-gray-800 hover:text-gray-500 transition-all duration-200 inline-block",
+        "md:hover:scale-105",
+        "font-medium",
+        "border border-gray-200 rounded px-2 py-1 md:border-0 md:px-0 md:py-0",
         @class
       ]}
     >
