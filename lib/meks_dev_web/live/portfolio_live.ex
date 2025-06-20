@@ -379,7 +379,8 @@ defmodule MeksDevWeb.PortfolioLive do
   defp projects_section(assigns) do
     ~H"""
     <section id="projects" class="py-20 px-4 relative">
-      <div class="max-w-6xl mx-auto">
+      <.dragon_treasure_sprite class="absolute z-0 opacity-20 w-44 -top-20 right-8 sm:-top-10 sm:right-4 md:-top-16 md:right-8 md:w-52 lg:opacity-80 lg:w-80 lg:-top-40 lg:right-52" />
+      <div class="max-w-6xl mx-auto relative z-10">
         <.section_header title="projects" />
 
         <div class="grid md:grid-cols-2 gap-12 mb-12">
@@ -650,6 +651,18 @@ defmodule MeksDevWeb.PortfolioLive do
     <img
       src={~p"/images/drawings/crow_drawing.svg"}
       alt="Crow flying with feathers scattering"
+      class={@class}
+    />
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def dragon_treasure_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/dragon_treasure.svg"}
+      alt="Dragon digging hole next to marked treasure map"
       class={@class}
     />
     """
