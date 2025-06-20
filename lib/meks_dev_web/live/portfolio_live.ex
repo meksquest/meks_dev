@@ -314,6 +314,7 @@ defmodule MeksDevWeb.PortfolioLive do
           <.contact_link href="https://github.com/meksquest" icon="🐙" text="GitHub" />
         </div>
       </div>
+      <.crow_sprite class="absolute z-0 opacity-40 -bottom-28 right-0 md:right-40 lg:right-56 lg:bottom-0 lg:opacity-80 w-48 md:w-56" />
     </section>
     """
   end
@@ -323,7 +324,7 @@ defmodule MeksDevWeb.PortfolioLive do
     <section id="about" class="py-20 px-4 relative">
       <.t_rex_sprite
         phx_click="toggle_dino_speech"
-        class="absolute z-0 left-2 -top-4 opacity-40 w-64 filter hover:drop-shadow-lg"
+        class="absolute z-0 left-2 -top-4 opacity-40 w-64 filter hover:drop-shadow-lg lg:opacity-80"
       />
       
     <!-- Speech bubble -->
@@ -638,6 +639,18 @@ defmodule MeksDevWeb.PortfolioLive do
         "cursor-pointer transition-all duration-300 hover:scale-105 hover:opacity-80",
         @class
       ]}
+    />
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def crow_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/crow_drawing.svg"}
+      alt="Crow flying with feathers scattering"
+      class={@class}
     />
     """
   end
