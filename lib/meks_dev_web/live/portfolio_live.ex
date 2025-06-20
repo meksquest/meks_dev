@@ -417,6 +417,7 @@ defmodule MeksDevWeb.PortfolioLive do
     ~H"""
     <section id="speaking" class="py-20 px-4 relative">
       <.dragon_passport_sprite class="absolute z-0 w-64 opacity-20 -top-16 md:w-72 md:-top-24 lg:w-96 lg:-top-44 lg:opacity-80" />
+      <.weird_ghosty_sprite class="absolute z-0 w-20 opacity-20 -top-28 right-4 sm:w-32 lg:opacity-60 lg:w-40 lg:-top-20 lg:right-56" />
       <div class="max-w-5xl mx-auto relative z-10">
         <.section_header title="speaking" />
 
@@ -691,6 +692,14 @@ defmodule MeksDevWeb.PortfolioLive do
       alt="Ghosts rising from a book next to some spooky melty candles"
       class={@class}
     />
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def weird_ghosty_sprite(assigns) do
+    ~H"""
+    <img src={~p"/images/drawings/weird_ghosty.svg"} alt="Strange black ghosty" class={@class} />
     """
   end
 end
