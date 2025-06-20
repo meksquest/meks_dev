@@ -474,7 +474,8 @@ defmodule MeksDevWeb.PortfolioLive do
   defp writing_section(assigns) do
     ~H"""
     <section id="writing" class="py-20 px-4 relative">
-      <div class="max-w-4xl mx-auto">
+      <.candle_ghosts_sprite class="absolute z-0 opacity-20 w-28 -top-16 right-8 sm:w-32 sm:-top-20 sm:right-16 lg:right-56 lg:opacity-80" />
+      <div class="max-w-4xl mx-auto relative z-10">
         <.section_header title="writing" />
 
         <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -676,6 +677,18 @@ defmodule MeksDevWeb.PortfolioLive do
     <img
       src={~p"/images/drawings/dragon_passport_drawing.svg"}
       alt="Dragon chewing on a passport"
+      class={@class}
+    />
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def candle_ghosts_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/candle_ghosts.svg"}
+      alt="Ghosts rising from a book next to some spooky melty candles"
       class={@class}
     />
     """
