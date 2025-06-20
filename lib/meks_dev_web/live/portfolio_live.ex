@@ -314,7 +314,7 @@ defmodule MeksDevWeb.PortfolioLive do
           <.contact_link href="https://github.com/meksquest" icon="🐙" text="GitHub" />
         </div>
       </div>
-      <.crow_sprite class="absolute z-0 opacity-40 -bottom-28 right-0 md:right-40 lg:right-56 lg:bottom-0 lg:opacity-80 w-48 md:w-56" />
+      <.crow_sprite class="absolute z-0 opacity-40 -bottom-16 right-0 md:right-28 lg:right-56 lg:bottom-0 lg:opacity-80 w-32 md:w-56 lg:w-72" />
     </section>
     """
   end
