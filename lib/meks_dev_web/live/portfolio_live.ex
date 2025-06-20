@@ -379,7 +379,7 @@ defmodule MeksDevWeb.PortfolioLive do
   defp projects_section(assigns) do
     ~H"""
     <section id="projects" class="py-20 px-4 relative">
-      <.dragon_treasure_sprite class="absolute z-0 opacity-20 w-44 -top-20 right-8 sm:-top-10 sm:right-4 md:-top-16 md:right-8 md:w-52 lg:opacity-80 lg:w-80 lg:-top-40 lg:right-52" />
+      <.dragon_treasure_sprite class="absolute z-0 opacity-20 w-60 -top-24 right-12 sm:-top-10 sm:right-4 md:-top-16 md:right-8 md:w-52 lg:opacity-80 lg:w-80 lg:-top-40 lg:right-52" />
       <div class="max-w-6xl mx-auto relative z-10">
         <.section_header title="projects" />
 
