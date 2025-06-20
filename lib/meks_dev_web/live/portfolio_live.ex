@@ -416,7 +416,8 @@ defmodule MeksDevWeb.PortfolioLive do
   defp speaking_section(assigns) do
     ~H"""
     <section id="speaking" class="py-20 px-4 relative">
-      <div class="max-w-5xl mx-auto">
+      <.dragon_passport_sprite class="absolute z-0 w-64 opacity-20 -top-16 md:w-72 md:-top-24 lg:w-96 lg:-top-44 lg:opacity-80" />
+      <div class="max-w-5xl mx-auto relative z-10">
         <.section_header title="speaking" />
 
         <div class="flex flex-col gap-8">
@@ -663,6 +664,18 @@ defmodule MeksDevWeb.PortfolioLive do
     <img
       src={~p"/images/drawings/dragon_treasure.svg"}
       alt="Dragon digging hole next to marked treasure map"
+      class={@class}
+    />
+    """
+  end
+
+  attr :class, :string, default: ""
+
+  def dragon_passport_sprite(assigns) do
+    ~H"""
+    <img
+      src={~p"/images/drawings/dragon_passport_drawing.svg"}
+      alt="Dragon chewing on a passport"
       class={@class}
     />
     """
