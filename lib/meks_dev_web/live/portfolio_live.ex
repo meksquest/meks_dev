@@ -451,6 +451,8 @@ defmodule MeksDevWeb.PortfolioLive do
             location="Lisbon, Portugal"
             video_link="https://www.youtube.com/watch?v=lGfVYDyIY5c"
             slides_link="https://github.com/MMcClure11/bookshelf/files/15010688/The.Bookshelf.-.Meks.McClure.pdf"
+            image_src={~p"/images/speaking/elixir_conf_eu_2024.jpg"}
+            image_alt="ElixirConf EU 2024 speaker announcement featuring Meks McClure"
           />
 
           <.speaking_card
@@ -458,6 +460,8 @@ defmodule MeksDevWeb.PortfolioLive do
             title="SVG Island: Building your own charts in LiveView"
             location="Orlando, Florida, USA"
             video_link="https://www.youtube.com/watch?v=YDYF8oAC2nE"
+            image_src={~p"/images/speaking/elixir_conf_us_2023.jpg"}
+            image_alt="ElixirConf US 2023 speaker announcement featuring Meks McClure"
           />
 
           <.speaking_card
