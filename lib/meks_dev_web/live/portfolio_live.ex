@@ -466,6 +466,8 @@ defmodule MeksDevWeb.PortfolioLive do
             location="Aurora, Colorado, USA"
             video_link="https://www.youtube.com/watch?v=NjFI46Yc2Sc"
             slides_link="https://speakerdeck.com/nkyllonen/how-to-grow-your-own-juniors-a-guide-to-mentoring-in-an-elixir-environment"
+            image_src={~p"/images/speaking/elixir_conf_us_2022.jpg"}
+            image_alt="ElixirConf US 2022 speaker announcement featuring Meks McClure"
           />
 
           <.speaking_card
@@ -568,23 +570,42 @@ defmodule MeksDevWeb.PortfolioLive do
   attr :slides_link, :string, default: ""
   attr :announcement_link, :string, default: ""
   attr :coming_soon?, :boolean, default: false
+  attr :image_src, :string, default: ""
+  attr :image_alt, :string, default: ""
 
   defp speaking_card(assigns) do
     ~H"""
-    <div class="p-6 bg-white">
-      <h3 class="handwritten text-2xl text-journal-charcoal mb-2">{@conf}</h3>
-      <h4 class="text-xl text-journal-gray mb-2">{@title}</h4>
-      <p class="text-journal-gray mb-4">{@location}</p>
-      <div class="flex gap-4">
-        <.styled_link :if={@video_link != ""} href={@video_link}>
-          📹 Video
-        </.styled_link>
-        <.styled_link :if={@slides_link != ""} href={@slides_link}>
-          📊 Speaker Deck
-        </.styled_link>
-        <.styled_link :if={@announcement_link != ""} href={@announcement_link}>
-          🎉 Talk Announcement
-        </.styled_link>
+    <div class="p-6 bg-white rounded-lg shadow-sm border border-journal-gray-lighter hover:shadow-md transition-shadow duration-200">
+      <div class="flex flex-col md:flex-row gap-6">
+        <!-- Content section -->
+        <div class={if(@image_src != "", do: "md:w-2/3", else: "w-full")}>
+          <h3 class="handwritten text-2xl text-journal-charcoal mb-2">{@conf}</h3>
+          <h4 class="text-xl text-journal-gray mb-2 leading-tight">{@title}</h4>
+          <p class="text-journal-gray mb-4 flex items-center gap-2">
+            <span class="text-sm">📍</span>
+            {@location}
+          </p>
+          <div class="flex flex-wrap gap-2 sm:gap-3">
+            <.styled_link :if={@video_link != ""} href={@video_link} class="text-sm">
+              📹 Video
+            </.styled_link>
+            <.styled_link :if={@slides_link != ""} href={@slides_link} class="text-sm">
+              📊 Speaker Deck
+            </.styled_link>
+            <.styled_link :if={@announcement_link != ""} href={@announcement_link} class="text-sm">
+              🎉 Talk Announcement
+            </.styled_link>
+          </div>
+        </div>
+        
+    <!-- Image section (if provided) -->
+        <div :if={@image_src != ""} class="md:w-1/3 flex-shrink-0">
+          <img
+            src={@image_src}
+            alt={@image_alt}
+            class="w-full h-48 sm:h-56 md:h-auto md:min-h-[200px] md:max-h-[300px] object-cover rounded-lg shadow-sm"
+          />
+        </div>
       </div>
     </div>
     """
