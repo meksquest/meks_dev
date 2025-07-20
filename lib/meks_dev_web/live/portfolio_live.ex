@@ -423,6 +423,14 @@ defmodule MeksDevWeb.PortfolioLive do
 
         <div class="flex flex-col gap-8">
           <.speaking_card
+            conf="Code BEAM Europe Nov 5-6, 2025"
+            title="Gleam Through Elixir Eyes: A Learning Journey"
+            location="Berlin, Germany"
+            announcement_link="https://codebeameurope.com/talks/gleam-through-elixir-eyes/"
+            coming_soon?={true}
+          />
+
+          <.speaking_card
             conf="Goatmire Sept 10-12, 2025"
             title="Resiliency: On Designing Adaptable Code and Becoming a Flexible Engineer"
             location="Varberg, Sweden"
