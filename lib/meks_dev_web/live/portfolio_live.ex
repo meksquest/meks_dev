@@ -479,6 +479,8 @@ defmodule MeksDevWeb.PortfolioLive do
             title="Meks McClure on Communication, Diversity, & Ergonomics"
             location="Remote"
             video_link="https://www.youtube.com/watch?v=jGN-eniKNP8"
+            image_src={~p"/images/speaking/elixir_wizards_2022.jpg"}
+            image_alt="Elixir Wizards podcast announcement featuring Meks McClure"
           />
         </div>
       </div>
