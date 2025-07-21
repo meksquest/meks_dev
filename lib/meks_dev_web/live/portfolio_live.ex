@@ -428,6 +428,8 @@ defmodule MeksDevWeb.PortfolioLive do
             location="Berlin, Germany"
             announcement_link="https://codebeameurope.com/talks/gleam-through-elixir-eyes/"
             coming_soon?={true}
+            image_src={~p"/images/speaking/code_beam_europe_2025.png"}
+            image_alt="Code BEAM Europe 2025 speaker announcement featuring Meks McClure"
           />
 
           <.speaking_card
