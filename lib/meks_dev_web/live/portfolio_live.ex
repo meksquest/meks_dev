@@ -510,7 +510,7 @@ defmodule MeksDevWeb.PortfolioLive do
 
           <.content_card class="p-6">
             <h3 class="handwritten text-xl text-journal-charcoal mb-4">
-              Life & Perspectives (coming July 2025)
+              Life & Perspectives (coming soon)
             </h3>
             <p class="text-journal-gray text-sm mb-4">
               Stories from the road, queer life, and creative coding.
