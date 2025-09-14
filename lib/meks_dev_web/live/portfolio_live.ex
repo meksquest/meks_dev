@@ -39,31 +39,31 @@ defmodule MeksDevWeb.PortfolioLive do
     >
       <!-- Journal Tabs Navigation - Desktop -->
       <.journal_tabs active_section={@active_section} />
-      
+
     <!-- Mobile Navigation -->
       <.mobile_nav mobile_menu_open={@mobile_menu_open} />
-      
+
     <!-- Mobile Menu Overlay -->
       <.mobile_menu_overlay mobile_menu_open={@mobile_menu_open} />
-      
+
     <!-- Hero Section -->
       <.hero_section />
-      
+
     <!-- About Section -->
       <.about_section dino_speech_visible={@dino_speech_visible} />
-      
+
     <!-- Projects Section -->
       <.projects_section />
-      
+
     <!-- Speaking Section -->
       <.speaking_section />
-      
+
     <!-- Writing Section -->
       <.writing_section />
-      
+
     <!-- Tea Sponsorship Section -->
       <.tea_sponsorship_section />
-      
+
     <!-- Footer -->
       <.footer />
     </div>
@@ -306,7 +306,7 @@ defmodule MeksDevWeb.PortfolioLive do
         <p class="text-xl md:text-2xl text-journal-charcoal max-w-2xl mx-auto leading-relaxed text-write mb-8">
           Artist-engineer in flux, dancing between ink and sparkles, crafting peculiar spells with intention.
         </p>
-        
+
     <!-- Quick Contact Links -->
         <div class="flex justify-center gap-8 text-write">
           <.contact_link href="mailto:mmcclure0100@gmail.com" icon="📧" text="Email" />
@@ -326,7 +326,7 @@ defmodule MeksDevWeb.PortfolioLive do
         phx_click="toggle_dino_speech"
         class="absolute z-0 left-2 -top-4 opacity-40 w-64 filter hover:drop-shadow-lg lg:opacity-80"
       />
-      
+
     <!-- Speech bubble -->
       <div
         :if={@dino_speech_visible}
@@ -605,7 +605,7 @@ defmodule MeksDevWeb.PortfolioLive do
             </.styled_link>
           </div>
         </div>
-        
+
     <!-- Image section (if provided) -->
         <div :if={@image_src != ""} class="md:w-1/3 flex-shrink-0">
           <img
