@@ -424,11 +424,11 @@ defmodule MeksDevWeb.PortfolioLive do
         <div class="flex flex-col gap-8">
           <.speaking_card
             conf="Code BEAM Europe Nov 5-6, 2025"
-            title="Gleam Through Elixir Eyes: A Learning Journey"
+            title="The Roots of Resiliency"
             location="Berlin, Germany"
-            announcement_link="https://codebeameurope.com/talks/gleam-through-elixir-eyes/"
+            announcement_link=""
             coming_soon?={true}
-            image_src={~p"/images/speaking/code_beam_europe_2025.png"}
+            image_src={~p"/images/speaking/code_beam_europe_2025.jpeg"}
             image_alt="Code BEAM Europe 2025 speaker announcement featuring Meks McClure"
           />
 
