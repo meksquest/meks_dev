@@ -434,7 +434,7 @@ defmodule MeksDevWeb.PortfolioLive do
 
           <.speaking_card
             conf="Goatmire Sept 10-12, 2025"
-            title="Resiliency: On Designing Adaptable Code and Becoming a Flexible Engineer"
+            title="The Roots of Resiliency"
             location="Varberg, Sweden"
             announcement_link="https://goatmire.com/talk/resiliency-on-designing-adaptable-code-and-becoming-a-flexible-engineer"
             coming_soon?={true}
