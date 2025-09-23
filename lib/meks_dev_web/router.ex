@@ -18,6 +18,7 @@ defmodule MeksDevWeb.Router do
     pipe_through :browser
 
     live "/", PortfolioLive
+    live "/blogs/the-theatre-of-pull-requests-and-code-review", BlogsLive.PullRequest
   end
 
   # Other scopes may use custom stacks.

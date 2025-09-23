@@ -503,7 +503,10 @@ defmodule MeksDevWeb.PortfolioLive do
             <p class="text-journal-gray text-sm mb-4">
               In-depth explorations of Elixir, Phoenix, and LiveView concepts
             </p>
-            <.styled_link href="https://dev.to/mmcclure11" class="text-sm">
+            <.styled_link
+              href={~p"/blogs/the-theatre-of-pull-requests-and-code-review"}
+              class="text-sm"
+            >
               Read articles →
             </.styled_link>
           </.content_card>
