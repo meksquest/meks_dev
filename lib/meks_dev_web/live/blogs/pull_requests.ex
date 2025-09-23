@@ -14,7 +14,7 @@ defmodule MeksDevWeb.BlogsLive.PullRequest do
 
       <div class={container_classes()}>
         <h1 class={h1_classes()}>The Theatre of Pull Requests and Code Review</h1>
-        <h3 class={h3_classes()}>September 23, 2025</h3>
+        <h3 class={h3_classes()}>Meks McClure · September 23, 2025</h3>
 
         <img
           src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z87j4h0uin8v9zgs26wo.png"
