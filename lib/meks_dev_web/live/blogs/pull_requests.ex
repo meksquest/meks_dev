@@ -214,9 +214,7 @@ defmodule MeksDevWeb.BlogsLive.PullRequest do
   defp a_classes, do: "text-blue-600 hover:text-blue-700 underline underline-offset-2"
   defp code_inline_classes, do: "font-mono text-sm bg-gray-100 text-gray-900 rounded px-1 py-0.5"
   defp strong_classes, do: "font-semibold"
-
-  defp credit_link_classes,
-    do: "block w-full max-w-md mx-auto mt-2 text-left text-sm text-gray-500"
+  defp credit_link_classes, do: "mt-2 text-left text-sm text-gray-500"
 
   defp img_classes, do: "mx-auto my-6 w-full rounded-lg shadow"
   defp ul_classes, do: "list-disc pl-6 text-gray-800 space-y-2 mb-4"
