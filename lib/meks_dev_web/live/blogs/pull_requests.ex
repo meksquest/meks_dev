@@ -36,7 +36,12 @@ defmodule MeksDevWeb.BlogsLive.PullRequest do
           and one of the standout talks for me was
           <a href="https://www.linkedin.com/in/sasajuric/" class={a_classes()}>Saša Jurić's</a>
           <a href="https://goatmire.com/talk/tell-me-a-story" class={a_classes()}>"Tell Me a Story"</a>.
-          It was an incredible presentation that combined theatrical storytelling with practical technical advice. Saša performed parts of his talk in character, turning technical topics into a compelling narrative that was part comedy, part tragedy, and fully packed with useful insights I've started implementing myself. The recording will eventually be released online for viewing. I highly recommend that people watch it, and I'll endeavor to add a link to it here when it becomes available.
+          It was an incredible presentation that combined theatrical storytelling with practical technical advice. Saša performed parts of his talk in character, turning technical topics into a compelling narrative that was part comedy, part tragedy, and fully packed with useful insights I've started implementing myself. The recording will eventually be released online for viewing. I highly recommend that people watch it, and I'll endeavor to add a link to it here when it becomes available*.
+        </p>
+
+        <p class={p_classes()}>
+          * The <a href="https://youtu.be/GOrKfCs-mr0" class={a_classes()}>video recording</a>
+          from Goatmire is now live!
         </p>
 
         <img
