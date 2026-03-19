@@ -391,7 +391,7 @@ defmodule MeksDevWeb.PortfolioLive do
             image_alt="Quenta collaborative storytelling platform screenshot"
             tech_stack={["Elixir", "Phoenix", "LiveView", "PostgreSQL"]}
             links={[
-              {"Elixir Prototype GitHub", "https://github.com/MMcClure11/quenta/tree/main/elixir"},
+              {"Elixir Prototype GitHub", "https://github.com/meksquest/quenta"},
               {"Elixir Prototype Live", "https://quenta.pro/"}
             ]}
           />
