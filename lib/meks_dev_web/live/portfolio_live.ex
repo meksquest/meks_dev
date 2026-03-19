@@ -309,7 +309,7 @@ defmodule MeksDevWeb.PortfolioLive do
         
     <!-- Quick Contact Links -->
         <div class="flex justify-center gap-8 text-write">
-          <.contact_link href="mailto:mmcclure0100@gmail.com" icon="📧" text="Email" />
+          <.contact_link href="mailto:meks@hey.com" icon="📧" text="Email" />
           <.contact_link href="https://www.linkedin.com/in/meksmcclure/" icon="💼" text="LinkedIn" />
           <.contact_link href="https://github.com/meksquest" icon="🐙" text="GitHub" />
         </div>
