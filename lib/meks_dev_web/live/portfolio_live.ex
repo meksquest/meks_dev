@@ -304,7 +304,7 @@ defmodule MeksDevWeb.PortfolioLive do
           (they/them)
         </h2>
         <p class="text-xl md:text-2xl text-journal-charcoal max-w-2xl mx-auto leading-relaxed text-write mb-8">
-          Artist-engineer in flux, dancing between ink and sparkles, crafting peculiar spells with intention.
+          Artist-engineer dancing between ink and sparkles, crafting spells with intention.
         </p>
         
     <!-- Quick Contact Links -->
@@ -342,17 +342,11 @@ defmodule MeksDevWeb.PortfolioLive do
           <.content_card>
             <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Professional</h3>
             <p class="text-journal-gray leading-relaxed mb-4">
-              I’m an artist-engineer crafting small, intentional
-              systems with care and curiosity. My work lives at the
-              intersection of elegance and precision—whether I’m building with
-              Elixir and Phoenix, tuning my NeoVim config, or shaping focused
-              tools that do one thing well.
+              I’m an artist-engineer crafting intentional systems with care and curiosity.
             </p>
             <p class="text-journal-gray leading-relaxed">
-              I’ve presented at several Elixir conferences, where I share the
-              joy of strange abstractions, practical design, and soft,
-              human-centered tooling. I write to explore, speak to connect, and
-              build to create space—for others, and for myself.
+              I’ve presented at several Elixir conferences, where I share  my learnings from software engineering.
+              I write to explore, speak to connect, and build to create space—for others, and for myself.
             </p>
           </.content_card>
 
@@ -364,10 +358,6 @@ defmodule MeksDevWeb.PortfolioLive do
               at the edges, sharp at the heart. I sketch dragons in ink, I
               sleep beside a sparkly bumblecorn, and I write about my travels,
               the systems I build, and the things I notice along the way.
-            </p>
-            <p class="text-journal-gray leading-relaxed">
-              This site is part of the trail I leave behind. Thanks for walking
-              through it.
             </p>
           </.content_card>
         </div>
