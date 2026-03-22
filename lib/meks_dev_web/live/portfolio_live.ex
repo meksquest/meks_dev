@@ -345,19 +345,21 @@ defmodule MeksDevWeb.PortfolioLive do
               I’m an artist-engineer crafting intentional systems with care and curiosity.
             </p>
             <p class="text-journal-gray leading-relaxed">
-              I’ve presented at several Elixir conferences, where I share  my learnings from software engineering.
-              I write to explore, speak to connect, and build to create space—for others, and for myself.
+              I’ve presented at several Elixir conferences, where I share my
+              learnings from software engineering.
+              I write to explore, speak to connect, and build to create space
+              for others, and for myself.
             </p>
           </.content_card>
 
           <.content_card>
             <h3 class="handwritten text-2xl text-journal-charcoal mb-6">Beyond the Code</h3>
             <p class="text-journal-gray leading-relaxed mb-4">
-              I live on the road, always moving, always learning. Queerness and
-              transition shape how I experience the world—fluid, layered, soft
-              at the edges, sharp at the heart. I sketch dragons in ink, I
-              sleep beside a sparkly bumblecorn, and I write about my travels,
-              the systems I build, and the things I notice along the way.
+              I live on the road, letting connection with people guide me in
+              where to go. Queerness and transition shape how I experience the
+              world. I sketch dragons in ink, I sleep beside a sparkly
+              bumblecorn, and I write about my travels, the projects I create,
+              and the things I notice along the way.
             </p>
           </.content_card>
         </div>
