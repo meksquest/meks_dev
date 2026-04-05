@@ -505,11 +505,14 @@ defmodule MeksDevWeb.PortfolioLive do
 
           <.content_card class="p-6">
             <h3 class="handwritten text-xl text-journal-charcoal mb-4">
-              Life & Perspectives (coming soon)
+              Life and Perspectives
             </h3>
             <p class="text-journal-gray text-sm mb-4">
               Stories from the road, queer life, and creative coding.
             </p>
+            <.styled_link href={~p"/blogs/blueberries-in-krakow"} class="text-sm">
+              Stories →
+            </.styled_link>
           </.content_card>
         </div>
 
