@@ -8,7 +8,7 @@ defmodule MeksDevWeb.BlogsLive.Escape do
   def render(assigns) do
     ~H"""
     <div class="bg-journal-cream paper-texture">
-      <.primary_button href={~p"/"} class="handwritten text-xl m-8">
+      <.primary_button href={~p"/"} class="handwritten text-xl m-3">
         meks.quest
       </.primary_button>
 
