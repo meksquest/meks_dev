@@ -511,6 +511,9 @@ defmodule MeksDevWeb.PortfolioLive do
               Stories from the road, queer life, and creative coding.
             </p>
             <div class="flex flex-col">
+              <.styled_link href={~p"/blogs/escape"} class="text-sm">
+                Escape →
+              </.styled_link>
               <.styled_link href={~p"/blogs/wood-with-legs"} class="text-sm">
                 Wood with Legs →
               </.styled_link>
