@@ -51,8 +51,7 @@ like small, deliberate stars.
 A sunset so low and so gold
 for a moment you forget yourself.
 An unremarkable Tuesday
-except for the scent of fresh bread
-filling your nose.
+except for the scent of fresh baked bread.
 A friend shaking beside you with laughter
 at nothing and everything.
 
