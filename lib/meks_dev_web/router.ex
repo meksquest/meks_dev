@@ -19,6 +19,7 @@ defmodule MeksDevWeb.Router do
 
     live "/", PortfolioLive
     live "/blogs/the-theatre-of-pull-requests-and-code-review", BlogsLive.PullRequest
+    live "/blogs/wood-with-legs", BlogsLive.WoodWithLegs
     live "/blogs/blueberries-in-krakow", BlogsLive.BlueberriesInKrakow
   end
 

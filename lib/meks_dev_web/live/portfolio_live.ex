@@ -499,7 +499,7 @@ defmodule MeksDevWeb.PortfolioLive do
               href={~p"/blogs/the-theatre-of-pull-requests-and-code-review"}
               class="text-sm"
             >
-              Read articles →
+              The Theatre of Pull Requests and Code Review →
             </.styled_link>
           </.content_card>
 
@@ -510,9 +510,14 @@ defmodule MeksDevWeb.PortfolioLive do
             <p class="text-journal-gray text-sm mb-4">
               Stories from the road, queer life, and creative coding.
             </p>
-            <.styled_link href={~p"/blogs/blueberries-in-krakow"} class="text-sm">
-              Stories →
-            </.styled_link>
+            <div class="flex flex-col">
+              <.styled_link href={~p"/blogs/wood-with-legs"} class="text-sm">
+                Wood with Legs →
+              </.styled_link>
+              <.styled_link href={~p"/blogs/blueberries-in-krakow"} class="text-sm">
+                Blueberries →
+              </.styled_link>
+            </div>
           </.content_card>
         </div>
 
