@@ -30,7 +30,7 @@ It doesn't.
 Loss is a black hole pressed onto the white page
 of your precious, terrified life
 so wide there is no margin left,
-no room even for your name.
+no room for even your name.
 
 Escape
 feels like the only way.
