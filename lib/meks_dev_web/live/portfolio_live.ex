@@ -378,24 +378,24 @@ defmodule MeksDevWeb.PortfolioLive do
         <div class="grid md:grid-cols-2 gap-12 mb-12">
           <.project_card
             title="Quenta"
-            description="Expense sharing app prototyped with Elixir/Phoenix, and built with Svelt."
+            description="Expense sharing app built with Elixir/Phoenix."
             image_src={~p"/images/projects/quenta-screenshot.png"}
             image_alt="Quenta collaborative storytelling platform screenshot"
             tech_stack={["Elixir", "Phoenix", "LiveView", "PostgreSQL"]}
             links={[
-              {"Elixir Prototype GitHub", "https://github.com/meksquest/quenta"},
-              {"Elixir Prototype Live", "https://quenta.pro/"}
+              {"GitHub", "https://github.com/meksquest/quenta"},
+              {"Prototype Live", "https://quenta.pro/"}
             ]}
           />
 
           <.project_card
             title="Bookshelf"
-            description="A virtual library of all the books you want to keep tabs on, those sneaky buggers tend to run off in search of adventure."
+            description="Demo project for Phoenix LiveView and Tailwind conference talk."
             image_src={~p"/images/projects/bookshelf-screenshot.png"}
             image_alt="Bookshelf book management system screenshot"
             tech_stack={["Elixir", "Phoenix", "LiveView"]}
             links={[
-              {"GitHub", "https://github.com/MMcClure11/bookshelf"},
+              {"GitHub", "https://github.com/meksquest/bookshelf"},
               {"Live", "https://bookshelf-meks.fly.dev/"}
             ]}
           />
