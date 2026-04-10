@@ -212,7 +212,7 @@ defmodule MeksDevWeb.PortfolioLive do
         <img
           src={@image_src}
           alt={@image_alt}
-          class="h-full object-cover border border-journal-gray-light rounded"
+          class="w-full object-contain max-h-[300px] rounded-lg shadow-sm"
         />
       </div>
 
