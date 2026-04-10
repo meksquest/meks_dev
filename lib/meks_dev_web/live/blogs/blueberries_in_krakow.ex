@@ -17,7 +17,7 @@ defmodule MeksDevWeb.BlogsLive.BlueberriesInKrakow do
         <h3 class={h3_classes()}>Meks McClure · May 11, 2025</h3>
 
         <p class={p_classes()}>
-          I am in a supermarket in Kraków.
+          I'm in a supermarket in Kraków.
         </p>
 
         <p class={p_classes()}>
@@ -115,4 +115,3 @@ defmodule MeksDevWeb.BlogsLive.BlueberriesInKrakow do
     """
   end
 end
-
