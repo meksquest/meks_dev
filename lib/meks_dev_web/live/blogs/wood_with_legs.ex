@@ -12,6 +12,10 @@ defmodule MeksDevWeb.BlogsLive.WoodWithLegs do
         meks.quest
       </.primary_button>
 
+      <.primary_button href={~p"/stories"} class="handwritten text-xl m-3">
+        Stories
+      </.primary_button>
+
       <div class={container_classes()}>
         <h1 class={h1_classes()}>Wood with Legs</h1>
         <h3 class={h3_classes()}>Meks McClure · December 27, 2023</h3>

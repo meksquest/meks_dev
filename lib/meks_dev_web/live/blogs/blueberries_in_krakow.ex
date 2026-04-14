@@ -12,6 +12,10 @@ defmodule MeksDevWeb.BlogsLive.BlueberriesInKrakow do
         meks.quest
       </.primary_button>
 
+      <.primary_button href={~p"/stories"} class="handwritten text-xl m-3">
+        Stories
+      </.primary_button>
+
       <div class={container_classes()}>
         <h1 class={h1_classes()}>Blueberries</h1>
         <h3 class={h3_classes()}>Meks McClure · May 11, 2025</h3>
