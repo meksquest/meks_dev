@@ -19,6 +19,11 @@ defmodule MeksDevWeb.StoriesLive.Index do
           </.styled_link>
         </li>
         <li>
+          <.styled_link href={~p"/blogs/sky-water"} class="text-sm">
+            Sky Water - November 22, 2025
+          </.styled_link>
+        </li>
+        <li>
           <.styled_link href={~p"/blogs/blueberries-in-krakow"} class="text-sm">
             Blueberries - May 11, 2025
           </.styled_link>
