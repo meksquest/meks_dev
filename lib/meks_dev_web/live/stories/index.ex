@@ -38,13 +38,6 @@ defmodule MeksDevWeb.StoriesLive.Index do
     """
   end
 
-  defp container_classes, do: "mx-auto max-w-3xl px-6 py-8"
-
-  defp h1_classes, do: "text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6"
-  defp h3_classes, do: "text-xl font-semibold text-gray-900 mt-8 mb-3"
-
-  defp p_classes, do: "text-gray-800 leading-relaxed mb-4"
-
   attr :href, :string, required: true
   attr :class, :string, default: ""
   slot :inner_block, required: true
