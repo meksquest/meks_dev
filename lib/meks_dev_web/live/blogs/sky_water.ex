@@ -25,7 +25,7 @@ defmodule MeksDevWeb.BlogsLive.SkyWater do
         </p>
 
         <p class={p_classes()}>
-          I bought a pair of linen pants yesterday — bright, sunny orange, much more colorful than my typical black. And they have <em>pockets</em>! Only problem is, they're too long. Like untied-shoelaces-threat-of-tripping too long. Everything else I brought is woefully too warm. So these pants need to work, and they need to work by 2:00 pm, when I leave for a wedding.
+          I bought a pair of linen pants yesterday — bright, sunny orange, much more colorful than my typical black. And they have <em>pockets</em>! Only problem is, they're too long. Like untied-shoelaces-threat-of-tripping too long. Everything else I brought is far too warm. So these pants need to work, and they need to work by 2:00 pm, when I leave for a wedding.
         </p>
 
         <p class={p_classes()}>
@@ -34,7 +34,7 @@ defmodule MeksDevWeb.BlogsLive.SkyWater do
         </p>
 
         <p class={p_classes()}>
-          She marks the hem, I hand over the pants, and ask if she can do it by 2:00. "No problem." How much? 50,000 rupiah. I do some quick math: <em>3 USD</em>. I try to hide the shock, nod my head, and go to collect the cash.
+          She marks the hem, I hand over the pants, and ask if she can do it by 2:00. "No problem." How much? 50,000 rupiah. I do some quick math: <em>3 USD</em>. I try not to react, nod my head, and go to collect the cash.
         </p>
 
         <p class={p_classes()}>
@@ -57,11 +57,11 @@ defmodule MeksDevWeb.BlogsLive.SkyWater do
         </p>
 
         <p class={p_classes()}>
-          By the time I arrive, my heart is pounding from the lingering adrenaline. The cortisol gradually eases as I walk into a lush garden full of tall trees, deep green everywhere, the kind of place that feels like an oasis rather than a venue.
+          By the time I arrive, my heart is pounding from the lingering adrenaline. I walk into a lush garden full of tall trees, deep green everywhere, the kind of place that feels like an oasis rather than a venue.
         </p>
 
         <p class={p_classes()}>
-          I find a place in the open-air seating near the back. The groom is already standing at the front in a deep purple suit with subtle colors, textures, and patterns that I've only ever seen in Bali — the kind of thing only someone like Marcus, who grew up here, could pull off. When the bride arrives in her white gown and veil, she passes off her bouquet, and they greet each other in a mix of English and Indonesian that somehow tells you everything about how they met — Zoe from New Zealand, Marcus from Indonesia, the ceremony blending both worlds. Vows, shared rice, a drink passed between them.
+          I find a place in the open-air seating near the back. The groom is already standing at the front in a deep purple suit colors and patterns I've only ever seen in Bali — the kind of thing only someone like Marcus, who grew up here, could pull off. When the bride arrives in her white gown and veil, she passes off her bouquet, and they greet each other in a mix of English and Indonesian that somehow tells you everything about how they met — Zoe from New Zealand, Marcus from Indonesia, the ceremony blending both worlds. Vows, shared rice, a drink passed between them.
         </p>
 
         <p class={p_classes()}>
@@ -95,7 +95,9 @@ defmodule MeksDevWeb.BlogsLive.SkyWater do
         </p>
 
         <p class={p_classes()}>
-          As I'm eating my "not spicy" rice dish — which is actively bringing tears to my eyes and making me question the sanity of a person who calls this "not spicy" — I overhear one of Marcus's foreign friends ask, "Hey, where are all your surfer friends?"
+          As I'm eating my "not spicy" rice dish — which is actively bringing tears to my eyes and making me question what qualifies as
+          <em>spicy</em>
+          here — I overhear one of Marcus's foreign friends ask, "Hey, where are all your surfer friends?"
         </p>
 
         <p class={p_classes()}>
@@ -119,7 +121,11 @@ defmodule MeksDevWeb.BlogsLive.SkyWater do
         </p>
 
         <p class={p_classes()}>
-          <em>Surfers</em>. People who voluntarily spend most of their time <em>in the ocean</em>.
+          <em>Surfers</em>.
+        </p>
+
+        <p class={p_classes()}>
+          People who voluntarily spend most of their time <em>in the ocean</em>.
         </p>
 
         <p class={p_classes()}>
@@ -149,7 +155,8 @@ defmodule MeksDevWeb.BlogsLive.SkyWater do
         </p>
 
         <p class={p_classes()}>
-          Actual, large, booming, <em>this-feels-like-it-should-require-a-permit</em> fireworks. In the middle of the garden. Under the trees.
+          Actual, large, booming, <em>this-feels-like-it-should-require-a-permit</em>
+          fireworks. In the middle of the garden. Under the trees.
         </p>
 
         <p class={p_classes()}>
