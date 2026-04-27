@@ -23,6 +23,7 @@ defmodule MeksDevWeb.Router do
     live "/blogs/wood-with-legs", BlogsLive.WoodWithLegs
     live "/blogs/blueberries-in-krakow", BlogsLive.BlueberriesInKrakow
     live "/blogs/sky-water", BlogsLive.SkyWater
+    live "/blogs/the-sprite-unbound", BlogsLive.TheSpriteUnbound
     live "/stories", StoriesLive.Index
   end
 

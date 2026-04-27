@@ -14,6 +14,11 @@ defmodule MeksDevWeb.StoriesLive.Index do
 
       <ul class="m-8">
         <li>
+          <.styled_link href={~p"/blogs/the-sprite-unbound"} class="text-sm">
+            The Sprite Unbound - April 26, 2026
+          </.styled_link>
+        </li>
+        <li>
           <.styled_link href={~p"/blogs/escape"} class="text-sm">
             Escape - April 07, 2026
           </.styled_link>
