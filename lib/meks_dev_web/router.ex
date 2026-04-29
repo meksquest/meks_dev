@@ -21,12 +21,6 @@ defmodule MeksDevWeb.Router do
     live "/blogs", BlogLive.Index
     live "/blogs/:slug", BlogLive.Show
     live "/blogs/the-theatre-of-pull-requests-and-code-review", BlogsLive.PullRequest
-    live "/blogs/escape", BlogsLive.Escape
-    live "/blogs/wood-with-legs", BlogsLive.WoodWithLegs
-    live "/blogs/blueberries-in-krakow", BlogsLive.BlueberriesInKrakow
-    live "/blogs/sky-water", BlogsLive.SkyWater
-    live "/blogs/look-at-him", BlogsLive.LookAtHim
-    live "/stories", StoriesLive.Index
   end
 
   # Other scopes may use custom stacks.
