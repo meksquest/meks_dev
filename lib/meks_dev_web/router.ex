@@ -20,7 +20,6 @@ defmodule MeksDevWeb.Router do
     live "/", PortfolioLive
     live "/blogs", BlogLive.Index
     live "/blogs/:slug", BlogLive.Show
-    live "/blogs/the-theatre-of-pull-requests-and-code-review", BlogsLive.PullRequest
   end
 
   # Other scopes may use custom stacks.
