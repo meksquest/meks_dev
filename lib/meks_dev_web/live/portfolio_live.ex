@@ -495,11 +495,8 @@ defmodule MeksDevWeb.PortfolioLive do
             <p class="text-journal-gray text-sm mb-4">
               In-depth explorations of Elixir, Phoenix, and LiveView concepts
             </p>
-            <.styled_link
-              href={~p"/blogs/the-theatre-of-pull-requests-and-code-review"}
-              class="text-sm"
-            >
-              The Theatre of Pull Requests and Code Review →
+            <.styled_link href={~p"/blogs/?tags[]=technical"} class="text-sm">
+              Technical Writing →
             </.styled_link>
           </.content_card>
 
@@ -511,7 +508,7 @@ defmodule MeksDevWeb.PortfolioLive do
               Stories from the road, queer life, and creative coding.
             </p>
             <div class="flex flex-col">
-              <.styled_link href={~p"/blogs"} class="text-sm">
+              <.styled_link href={~p"/blogs/?tags[]=travel&tags[]=poetry"} class="text-sm">
                 Stories →
               </.styled_link>
             </div>

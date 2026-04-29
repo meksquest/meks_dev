@@ -8,11 +8,7 @@ defmodule MeksDev.Blogs do
     highlighters: []
 
   @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
-
-  # Derive all unique tags at compile time
   @tags @posts |> Enum.flat_map(& &1.tags) |> Enum.uniq() |> Enum.sort()
-
-  # --- Public API ---
 
   def all_posts, do: @posts
   def all_tags, do: @tags
@@ -23,11 +19,28 @@ defmodule MeksDev.Blogs do
   end
 
   @doc """
-  Returns all posts.
-  """
-  def list_posts(_opts \\ []) do
-    posts = all_posts()
+  Returns posts, optionally filtered by a list of tags (union match).
 
-    %{posts: posts}
+  ## Options
+    - `:tags` - a list of tag strings, or `[]`/`nil` for all posts
+  """
+  def list_posts(opts \\ []) do
+    tags = opts |> Keyword.get(:tags, []) |> List.wrap() |> Enum.reject(&(&1 == ""))
+
+    posts =
+      all_posts()
+      |> filter_by_tags(tags)
+
+    %{posts: posts, tags: tags}
+  end
+
+  # No filter when the list is empty
+  defp filter_by_tags(posts, []), do: posts
+
+  # Union: post must have AT LEAST ONE of the selected tags
+  defp filter_by_tags(posts, tags) do
+    Enum.filter(posts, fn post ->
+      Enum.any?(tags, &(&1 in post.tags))
+    end)
   end
 end

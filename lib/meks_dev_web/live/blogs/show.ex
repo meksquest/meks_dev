@@ -15,7 +15,7 @@ defmodule MeksDevWeb.BlogLive.Show do
       </.primary_button>
 
       <.primary_button href={~p"/blogs"} class="handwritten text-xl m-3">
-        Stories
+        Writing
       </.primary_button>
 
       <div class="mx-auto max-w-3xl px-6 py-8">
