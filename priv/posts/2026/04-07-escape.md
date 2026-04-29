@@ -1,26 +1,14 @@
-defmodule MeksDevWeb.BlogsLive.Escape do
-  use MeksDevWeb, :live_view
+%{
+  title: "Escape",
+  author: "Meks McClure",
+  date: ~D[2026-04-07],
+  slug: "escape",
+  description: "Healing from grief",
+  tags: ["poetry", "mental-health"]
+}
+---
 
-  def mount(_, _, socket) do
-    {:ok, socket}
-  end
 
-  def render(assigns) do
-    ~H"""
-    <div class="bg-journal-cream paper-texture">
-      <.primary_button href={~p"/"} class="handwritten text-xl m-3">
-        meks.quest
-      </.primary_button>
-
-      <.primary_button href={~p"/stories"} class="handwritten text-xl m-3">
-        Stories
-      </.primary_button>
-
-      <div class={container_classes()}>
-        <h1 class={h1_classes()}>Escape</h1>
-        <h3 class={h3_classes()}>Meks McClure · April 07, 2026</h3>
-
-        <p class={p_classes()}>
 Tell me
 Did you think that time would close it?
 
@@ -45,9 +33,9 @@ But you can build around it.
 The crow knows.
 She carries bright things
 
-   a button
-   an earring
-   a key
+> a button
+> an earring
+> a key
 
 to place in the dark
 like small, deliberate stars.
@@ -59,13 +47,13 @@ except for the scent of fresh baked bread.
 A friend shaking beside you with laughter
 at nothing and everything.
 
-   Gather them.
+> Gather them.
 
-   Hoard them.
+> Hoard them.
 
-   Be greedy.
+> Be greedy.
 
-   Be chaotic.
+> Be chaotic.
 
 Let your collection be wild and unruly
 as the universe itself.
@@ -100,38 +88,10 @@ They give you the one thing you need
 when you want nothing more
 than to escape the night.
 
-    Hope
+> Hope
 
 which is not a promise
 but a direction
 a leaning of the self into tomorrow.
 And the crow is already flying
 with something shining in her beak.
-        </p>
-      </div>
-    </div>
-    """
-  end
-
-  defp container_classes, do: "mx-auto max-w-3xl px-3 py-4"
-
-  defp h1_classes, do: "text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-6"
-  defp h3_classes, do: "text-xl font-semibold text-gray-900 mt-8 mb-3"
-
-  defp p_classes, do: "text-gray-800 leading-relaxed mb-4 whitespace-pre-wrap"
-
-  attr :href, :string, required: true
-  attr :class, :string, default: ""
-  slot :inner_block, required: true
-
-  defp primary_button(assigns) do
-    ~H"""
-    <a
-      href={@href}
-      class={"inline-flex items-center gap-2 px-6 py-3 bg-journal-charcoal text-journal-cream rounded-lg hover:bg-journal-gray transition-colors duration-200 font-medium shadow-sm hover:shadow-md " <> @class}
-    >
-      {render_slot(@inner_block)}
-    </a>
-    """
-  end
-end

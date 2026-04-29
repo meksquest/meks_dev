@@ -4,3 +4,28 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+.prose blockquote {
+  border-left: none;
+  font-style: normal;
+  padding-left: 2rem;
+  color: inherit;
+}
+
+/* Remove the auto-inserted curly quotes */
+.prose blockquote p::before { content: none; }
+.prose blockquote p::after  { content: none; }
+
+.poetry-content p {
+  white-space: pre-line;
+}
+
+.poetry-content blockquote {
+  border-left: none;
+  font-style: normal;
+  padding-left: 2rem;
+  margin: 0.5rem 0;
+}
+
+.poetry-content blockquote p::before { content: none; }
+.poetry-content blockquote p::after  { content: none; }
