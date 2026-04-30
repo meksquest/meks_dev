@@ -538,7 +538,7 @@ defmodule MeksDevWeb.PortfolioLive do
           </h3>
           <p class="text-journal-charcoal mb-6 leading-relaxed">
             If you enjoy my work and want to support my continued exploration of art, code, and creative solutions,
-            consider sponsoring my tea obsession! Every cup of Chai helps fuel late-night coding and drawing sessions and sparks new ideas.
+            consider sponsoring my tea obsession! Every cup of Chai helps fuel early morning coding and drawing sessions and sparks new ideas.
           </p>
           <.primary_button href="https://buymeacoffee.com/meks" class="handwritten text-xl">
             buy meks brain fuel
