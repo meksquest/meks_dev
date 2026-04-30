@@ -377,18 +377,6 @@ defmodule MeksDevWeb.PortfolioLive do
 
         <div class="grid md:grid-cols-2 gap-12 mb-12">
           <.project_card
-            title="Quenta"
-            description="Expense sharing app built with Elixir/Phoenix."
-            image_src={~p"/images/projects/quenta-screenshot.png"}
-            image_alt="Quenta collaborative storytelling platform screenshot"
-            tech_stack={["Elixir", "Phoenix", "LiveView", "PostgreSQL"]}
-            links={[
-              {"GitHub", "https://github.com/meksquest/quenta"},
-              {"Prototype Live", "https://quenta.pro/"}
-            ]}
-          />
-
-          <.project_card
             title="Bookshelf"
             description="Demo project for Phoenix LiveView and Tailwind conference talk."
             image_src={~p"/images/projects/bookshelf-screenshot.png"}
