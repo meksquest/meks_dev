@@ -25,6 +25,15 @@ defmodule MeksDevWeb.BlogLive.Show do
         <h3 class="text-xl font-semibold text-gray-900 mt-8 mb-3">
           {@post.author} · {Calendar.strftime(@post.date, "%B %d, %Y")}
         </h3>
+        <div class="flex gap-2 mt-2 mb-4">
+          <h4 :if={@post.location} class="text-gray-700 text-l">{@post.location}</h4>
+          <p
+            :for={tag <- @post.tags}
+            class="text-xs px-2 py-0.5 rounded-full transition-colors bg-gray-200 text-gray-700"
+          >
+            #{tag}
+          </p>
+        </div>
 
         <article class={
           if "poetry" in @post.tags, do: "poetry-content", else: "prose prose-gray max-w-none"
