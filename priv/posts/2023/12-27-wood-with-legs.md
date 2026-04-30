@@ -4,6 +4,7 @@
   date: ~D[2023-12-27],
   slug: "wood-with-legs",
   description: "Hiking in the Patagonia",
+  location: "El Chaltén, Argentina",
   tags: ["travel"]
 }
 ---

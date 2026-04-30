@@ -3,7 +3,8 @@
   author: "Meks McClure",
   date: ~D[2025-05-11],
   slug: "blueberries",
-  description: "A grocery store encounter in Kraków",
+  location: "Kraków, Poland",
+  description: "A grocery store encounter",
   tags: ["travel"]
 }
 ---

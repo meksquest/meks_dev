@@ -3,7 +3,6 @@
   author: "Meks McClure",
   date: ~D[2026-04-07],
   slug: "escape",
-  description: "Healing from grief",
   tags: ["poetry", "mental-health"]
 }
 ---

@@ -1,9 +1,9 @@
 %{
-  title: "Look at Him",
+  title: "The Body Remembers",
   author: "Meks McClure",
   date: ~D[2026-04-26],
-  slug: "look-at-him",
-  description: "Healing",
+  slug: "the-body-remembers",
+  description: "The Five Sprites: Laughing",
   tags: ["poetry", "mental-health"]
 }
 ---

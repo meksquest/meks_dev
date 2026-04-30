@@ -71,6 +71,7 @@ defmodule MeksDevWeb.BlogLive.Index do
               <p class="text-sm text-gray-500 mt-1">
                 {Calendar.strftime(post.date, "%B %d, %Y")}
               </p>
+              <p :if={post.location} class="text-gray-600 text-sm mt-2">{post.location}</p>
               <p :if={post.description} class="text-gray-700 mt-2">{post.description}</p>
             </a>
             <div class="flex gap-2 mt-2">

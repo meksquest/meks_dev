@@ -3,7 +3,8 @@
   author: "Meks McClure",
   date: ~D[2025-11-22],
   slug: "sky-water",
-  description: "A wedding in Indonesia",
+  location: "Canggu, Bali, Indonesia",
+  description: "Motorcycles, a wedding, and rain",
   tags: ["travel"]
 }
 ---

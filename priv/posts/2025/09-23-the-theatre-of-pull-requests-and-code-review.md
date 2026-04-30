@@ -3,6 +3,7 @@
   author: "Meks McClure",
   date: ~D[2025-09-23],
   slug: "the-theatre-of-pull-requests-and-code-review",
+  location: "Varberg, Sweden",
   description: "Lessons from Saša Jurić's talk on storytelling through commits and reviewable PRs",
   tags: ["technical", "elixir"]
 }

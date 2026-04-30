@@ -3,7 +3,8 @@
   author: "Meks McClure",
   date: ~D[2024-12-24],
   slug: "immortalized-poop",
-  description: "Folktale origin story, Catalonia",
+  location: "Barcelona, Spain",
+  description: "Folktale origin story",
   tags: ["travel", "fiction"]
 }
 ---
