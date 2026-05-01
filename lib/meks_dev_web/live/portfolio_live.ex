@@ -52,14 +52,14 @@ defmodule MeksDevWeb.PortfolioLive do
     <!-- About Section -->
       <.about_section dino_speech_visible={@dino_speech_visible} />
       
-    <!-- Projects Section -->
-      <.projects_section />
+    <!-- Writing Section -->
+      <.writing_section />
       
     <!-- Speaking Section -->
       <.speaking_section />
       
-    <!-- Writing Section -->
-      <.writing_section />
+    <!-- Projects Section -->
+      <.projects_section />
       
     <!-- Tea Sponsorship Section -->
       <.tea_sponsorship_section />
@@ -275,7 +275,7 @@ defmodule MeksDevWeb.PortfolioLive do
     <%= if @mobile_menu_open do %>
       <div class="lg:hidden fixed inset-0 bg-journal-cream paper-texture z-40 p-8">
         <div class="flex flex-col items-center justify-center h-full space-y-8">
-          <%= for {tab_id, label} <- [{"hero", "meks.quest"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
+          <%= for {tab_id, label} <- [{"hero", "meks.quest"}, {"about", "about"},{"writing", "writing"}, {"speaking", "speaking"},{"projects", "projects"}] do %>
             <button
               phx-click="navigate_to_section"
               phx-value-section={tab_id}
@@ -368,25 +368,41 @@ defmodule MeksDevWeb.PortfolioLive do
     """
   end
 
-  defp projects_section(assigns) do
+  defp writing_section(assigns) do
     ~H"""
-    <section id="projects" class="py-20 px-4 relative">
-      <.dragon_treasure_sprite class="absolute z-0 opacity-20 w-60 -top-24 right-12 sm:-top-10 sm:right-4 md:-top-16 md:right-8 md:w-52 lg:opacity-80 lg:w-80 lg:-top-40 lg:right-52" />
-      <div class="max-w-6xl mx-auto relative z-10">
-        <.section_header title="projects" />
+    <section id="writing" class="py-20 px-4 relative">
+      <.candle_ghosts_sprite class="absolute z-0 opacity-20 w-28 -top-16 right-8 sm:w-32 sm:-top-20 sm:right-16 lg:right-56 lg:opacity-80" />
+      <div class="max-w-4xl mx-auto relative z-10">
+        <.section_header title="writing" />
 
-        <div class="grid md:grid-cols-2 gap-12 mb-12">
-          <.project_card
-            title="Bookshelf"
-            description="Demo project for Phoenix LiveView and Tailwind conference talk."
-            image_src={~p"/images/projects/bookshelf-screenshot.png"}
-            image_alt="Bookshelf book management system screenshot"
-            tech_stack={["Elixir", "Phoenix", "LiveView"]}
-            links={[
-              {"GitHub", "https://github.com/meksquest/bookshelf"},
-              {"Live", "https://bookshelf-meks.fly.dev/"}
-            ]}
-          />
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <.content_card class="p-6">
+            <h3 class="handwritten text-xl text-journal-charcoal mb-4">Technical Deep Dives</h3>
+            <p class="text-journal-gray text-sm mb-4">
+              In-depth explorations of Elixir, Phoenix, and LiveView concepts
+            </p>
+            <.styled_link href={~p"/blogs/?tags[]=technical"} class="text-sm">
+              Technical Writing →
+            </.styled_link>
+          </.content_card>
+
+          <.content_card class="p-6">
+            <h3 class="handwritten text-xl text-journal-charcoal mb-4">
+              Life and Perspectives
+            </h3>
+            <p class="text-journal-gray text-sm mb-4">
+              Stories from the road, queer life, and creative coding.
+            </p>
+            <div class="flex flex-col">
+              <.styled_link href={~p"/blogs/?tags[]=travel&tags[]=poetry"} class="text-sm">
+                Stories →
+              </.styled_link>
+            </div>
+          </.content_card>
+        </div>
+
+        <div class="text-center text-journal-gray text-sm italic">
+          <p>*Transitioning from dev.to to this personal space</p>
         </div>
       </div>
     </section>
@@ -470,41 +486,25 @@ defmodule MeksDevWeb.PortfolioLive do
     """
   end
 
-  defp writing_section(assigns) do
+  defp projects_section(assigns) do
     ~H"""
-    <section id="writing" class="py-20 px-4 relative">
-      <.candle_ghosts_sprite class="absolute z-0 opacity-20 w-28 -top-16 right-8 sm:w-32 sm:-top-20 sm:right-16 lg:right-56 lg:opacity-80" />
-      <div class="max-w-4xl mx-auto relative z-10">
-        <.section_header title="writing" />
+    <section id="projects" class="py-20 px-4 relative">
+      <.dragon_treasure_sprite class="absolute z-0 opacity-20 w-60 -top-24 right-12 sm:-top-10 sm:right-4 md:-top-16 md:right-8 md:w-52 lg:opacity-80 lg:w-80 lg:-top-40 lg:right-52" />
+      <div class="max-w-6xl mx-auto relative z-10">
+        <.section_header title="projects" />
 
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-          <.content_card class="p-6">
-            <h3 class="handwritten text-xl text-journal-charcoal mb-4">Technical Deep Dives</h3>
-            <p class="text-journal-gray text-sm mb-4">
-              In-depth explorations of Elixir, Phoenix, and LiveView concepts
-            </p>
-            <.styled_link href={~p"/blogs/?tags[]=technical"} class="text-sm">
-              Technical Writing →
-            </.styled_link>
-          </.content_card>
-
-          <.content_card class="p-6">
-            <h3 class="handwritten text-xl text-journal-charcoal mb-4">
-              Life and Perspectives
-            </h3>
-            <p class="text-journal-gray text-sm mb-4">
-              Stories from the road, queer life, and creative coding.
-            </p>
-            <div class="flex flex-col">
-              <.styled_link href={~p"/blogs/?tags[]=travel&tags[]=poetry"} class="text-sm">
-                Stories →
-              </.styled_link>
-            </div>
-          </.content_card>
-        </div>
-
-        <div class="text-center text-journal-gray text-sm italic">
-          <p>*Transitioning from dev.to to this personal space</p>
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+          <.project_card
+            title="Bookshelf"
+            description="Demo project for Phoenix LiveView and Tailwind conference talk."
+            image_src={~p"/images/projects/bookshelf-screenshot.png"}
+            image_alt="Bookshelf book management system screenshot"
+            tech_stack={["Elixir", "Phoenix", "LiveView"]}
+            links={[
+              {"GitHub", "https://github.com/meksquest/bookshelf"},
+              {"Live", "https://bookshelf-meks.fly.dev/"}
+            ]}
+          />
         </div>
       </div>
     </section>
@@ -608,7 +608,7 @@ defmodule MeksDevWeb.PortfolioLive do
     ~H"""
     <div class="hidden lg:block fixed right-8 top-1/2 transform -translate-y-1/2 z-40">
       <div class="flex flex-col space-y-2">
-        <%= for {tab_id, label} <- [{"hero", "meks.quest"}, {"about", "about"}, {"projects", "projects"}, {"speaking", "speaking"}, {"writing", "writing"}] do %>
+        <%= for {tab_id, label} <- [{"hero", "meks.quest"}, {"about", "about"}, {"writing", "writing"}, {"speaking", "speaking"}, {"projects", "projects"}] do %>
           <button
             phx-click="navigate_to_section"
             phx-value-section={tab_id}
