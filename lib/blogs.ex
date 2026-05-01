@@ -19,19 +19,22 @@ defmodule MeksDev.Blogs do
   end
 
   @doc """
-  Returns posts, optionally filtered by a list of tags (union match).
+  Returns posts, optionally filtered by a list of tags (union match) and sorted.
 
   ## Options
     - `:tags` - a list of tag strings, or `[]`/`nil` for all posts
+    - `:sort` - one of `:date_desc` (default), `:date_asc`, `:title_asc`
   """
   def list_posts(opts \\ []) do
     tags = opts |> Keyword.get(:tags, []) |> List.wrap() |> Enum.reject(&(&1 == ""))
+    sort = Keyword.get(opts, :sort, :date_desc)
 
     posts =
       all_posts()
       |> filter_by_tags(tags)
+      |> sort_posts(sort)
 
-    %{posts: posts, tags: tags}
+    %{posts: posts, tags: tags, sort: sort}
   end
 
   # No filter when the list is empty
@@ -43,4 +46,9 @@ defmodule MeksDev.Blogs do
       Enum.any?(tags, &(&1 in post.tags))
     end)
   end
+
+  defp sort_posts(posts, :date_desc), do: Enum.sort_by(posts, & &1.date, {:desc, Date})
+  defp sort_posts(posts, :date_asc), do: Enum.sort_by(posts, & &1.date, {:asc, Date})
+  defp sort_posts(posts, :title_asc), do: Enum.sort_by(posts, &String.downcase(&1.title), :asc)
+  defp sort_posts(posts, _), do: posts
 end
