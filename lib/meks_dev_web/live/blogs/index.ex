@@ -3,6 +3,8 @@ defmodule MeksDevWeb.BlogLive.Index do
   alias MeksDev.Blogs
 
   @valid_sorts ~w(date_desc date_asc title_asc)
+  @per_page_opts [5, 10, 25]
+  @per_page_default 10
 
   def mount(_params, _session, socket) do
     {:ok, assign(socket, tags: Blogs.all_tags())}
@@ -11,12 +13,21 @@ defmodule MeksDevWeb.BlogLive.Index do
   def handle_params(params, _uri, socket) do
     active_tags = Map.get(params, "tags", []) |> List.wrap()
     sort = parse_sort(params["sort"])
-    {:noreply, load_posts(socket, active_tags, sort)}
-  end
+    page = parse_page(params["page"])
+    per_page = parse_per_page(params["per"])
 
-  defp load_posts(socket, active_tags, sort) do
-    result = Blogs.list_posts(tags: active_tags, sort: sort)
-    assign(socket, posts: result.posts, active_tags: result.tags, sort: sort)
+    result = Blogs.list_posts(tags: active_tags, sort: sort, page: page, per_page: per_page)
+
+    {:noreply,
+     assign(socket,
+       posts: result.posts,
+       active_tags: result.tags,
+       sort: result.sort,
+       page: result.page,
+       per_page: result.per_page,
+       total_pages: result.total_pages,
+       total: result.total
+     )}
   end
 
   defp toggle_tag(active_tags, tag) do
@@ -30,12 +41,36 @@ defmodule MeksDevWeb.BlogLive.Index do
   defp parse_sort(value) when value in @valid_sorts, do: String.to_existing_atom(value)
   defp parse_sort(_), do: :date_desc
 
-  # Build patch path preserving both tags and sort
-  defp blogs_path(tags, sort) do
+  defp parse_page(value) when is_binary(value) do
+    case Integer.parse(value) do
+      {n, ""} when n > 0 -> n
+      _ -> 1
+    end
+  end
+
+  defp parse_page(_), do: 1
+
+  defp parse_per_page(value) when is_binary(value) do
+    case Integer.parse(value) do
+      {n, ""} when n in @per_page_opts -> n
+      _ -> @per_page_default
+    end
+  end
+
+  defp parse_per_page(_), do: @per_page_default
+
+  # Single path builder — all state in one place, defaults omitted for clean URLs
+  defp blogs_path(tags, sort, page, per_page) do
     params =
       %{}
       |> then(fn p -> if tags != [], do: Map.put(p, "tags", tags), else: p end)
-      |> then(fn p -> if sort != :date_desc, do: Map.put(p, "sort", sort), else: p end)
+      |> then(fn p ->
+        if sort != :date_desc, do: Map.put(p, "sort", Atom.to_string(sort)), else: p
+      end)
+      |> then(fn p -> if page > 1, do: Map.put(p, "page", page), else: p end)
+      |> then(fn p ->
+        if per_page != @per_page_default, do: Map.put(p, "per", per_page), else: p
+      end)
 
     if params == %{}, do: ~p"/blogs", else: ~p"/blogs?#{params}"
   end
@@ -51,14 +86,13 @@ defmodule MeksDevWeb.BlogLive.Index do
         <%!-- Tag Filter Bar --%>
         <p class="text-xs font-medium text-gray-400 uppercase tracking-wide mr-1 my-2">Filter</p>
         <div class="flex flex-wrap gap-2">
-          <.tag_pill active={@active_tags == []} patch={blogs_path([], @sort)}>
+          <.tag_pill active={@active_tags == []} patch={blogs_path([], @sort, 1, @per_page)}>
             All
           </.tag_pill>
-
           <.tag_pill
             :for={tag <- @tags}
             active={tag in @active_tags}
-            patch={blogs_path(toggle_tag(@active_tags, tag), @sort)}
+            patch={blogs_path(toggle_tag(@active_tags, tag), @sort, 1, @per_page)}
           >
             #{tag}
           </.tag_pill>
@@ -67,13 +101,22 @@ defmodule MeksDevWeb.BlogLive.Index do
         <%!-- Sort Bar --%>
         <p class="text-xs font-medium text-gray-400 uppercase tracking-wide mr-1 my-2">Sort</p>
         <div class="flex flex-wrap gap-2 mb-6">
-          <.sort_pill active={@sort == :date_desc} patch={blogs_path(@active_tags, :date_desc)}>
+          <.sort_pill
+            active={@sort == :date_desc}
+            patch={blogs_path(@active_tags, :date_desc, 1, @per_page)}
+          >
             Newest
           </.sort_pill>
-          <.sort_pill active={@sort == :date_asc} patch={blogs_path(@active_tags, :date_asc)}>
+          <.sort_pill
+            active={@sort == :date_asc}
+            patch={blogs_path(@active_tags, :date_asc, 1, @per_page)}
+          >
             Oldest
           </.sort_pill>
-          <.sort_pill active={@sort == :title_asc} patch={blogs_path(@active_tags, :title_asc)}>
+          <.sort_pill
+            active={@sort == :title_asc}
+            patch={blogs_path(@active_tags, :title_asc, 1, @per_page)}
+          >
             Title A–Z
           </.sort_pill>
         </div>
@@ -100,7 +143,7 @@ defmodule MeksDevWeb.BlogLive.Index do
             <div class="flex gap-2 mt-2">
               <.link
                 :for={tag <- post.tags}
-                patch={blogs_path(toggle_tag(@active_tags, tag), @sort)}
+                patch={blogs_path(toggle_tag(@active_tags, tag), @sort, 1, @per_page)}
                 class={[
                   "text-xs px-2 py-0.5 rounded-full transition-colors",
                   if(tag in @active_tags,
@@ -119,10 +162,138 @@ defmodule MeksDevWeb.BlogLive.Index do
         <p :if={@posts == []} class="text-gray-500 text-center py-12">
           No posts found for the selected tags.
         </p>
+
+        <%!-- Pagination + per-page selector --%>
+        <div
+          :if={@total_pages > 1 or @total > 5}
+          class="flex items-center justify-between mt-10 gap-4"
+        >
+          <.pagination
+            page={@page}
+            total_pages={@total_pages}
+            tags={@active_tags}
+            sort={@sort}
+            per_page={@per_page}
+            path_fn={&blogs_path/4}
+          />
+          <.per_page_selector
+            per_page={@per_page}
+            tags={@active_tags}
+            sort={@sort}
+            path_fn={&blogs_path/4}
+          />
+        </div>
       </div>
     </div>
     """
   end
+
+  # --- Per-page selector ---
+
+  attr :per_page, :integer, required: true
+  attr :tags, :list, required: true
+  attr :sort, :atom, required: true
+  attr :path_fn, :any, required: true
+
+  defp per_page_selector(assigns) do
+    assigns = assign(assigns, :opts, @per_page_opts)
+
+    ~H"""
+    <div class="flex items-center gap-2">
+      <span class="text-xs font-medium text-gray-400 uppercase tracking-wide whitespace-nowrap">
+        Per page
+      </span>
+      <div class="inline-flex rounded-md border border-gray-300 overflow-hidden">
+        <.link
+          :for={n <- @opts}
+          patch={@path_fn.(@tags, @sort, 1, n)}
+          class={[
+            "text-sm px-3 py-1 border-r border-gray-300 last:border-r-0 transition-colors",
+            if(n == @per_page,
+              do: "bg-journal-charcoal text-journal-cream",
+              else: "bg-white text-gray-600 hover:bg-gray-50"
+            )
+          ]}
+        >
+          {n}
+        </.link>
+      </div>
+    </div>
+    """
+  end
+
+  # --- Pagination component ---
+
+  attr :page, :integer, required: true
+  attr :total_pages, :integer, required: true
+  attr :tags, :list, required: true
+  attr :sort, :atom, required: true
+  attr :per_page, :integer, required: true
+  attr :path_fn, :any, required: true
+
+  defp pagination(assigns) do
+    ~H"""
+    <nav class="flex items-center gap-1" aria-label="Pagination">
+      <.page_link
+        label="← Prev"
+        patch={@path_fn.(@tags, @sort, @page - 1, @per_page)}
+        disabled={@page <= 1}
+      />
+      <.page_link
+        :for={n <- page_range(@page, @total_pages)}
+        label={if n == :ellipsis, do: "…", else: to_string(n)}
+        patch={if n == :ellipsis, do: nil, else: @path_fn.(@tags, @sort, n, @per_page)}
+        active={n == @page}
+        disabled={n == :ellipsis}
+      />
+      <.page_link
+        label="Next →"
+        patch={@path_fn.(@tags, @sort, @page + 1, @per_page)}
+        disabled={@page >= @total_pages}
+      />
+    </nav>
+    """
+  end
+
+  attr :label, :string, required: true
+  attr :patch, :string, default: nil
+  attr :active, :boolean, default: false
+  attr :disabled, :boolean, default: false
+
+  defp page_link(assigns) do
+    ~H"""
+    <.link
+      patch={@patch || "#"}
+      class={[
+        "px-3 py-1 text-sm rounded-md border transition-colors",
+        @active && "bg-journal-charcoal text-journal-cream border-journal-charcoal",
+        @disabled && "opacity-40 pointer-events-none border-transparent",
+        !@active && !@disabled && "bg-white text-gray-600 border-gray-300 hover:border-gray-500"
+      ]}
+      aria-current={if @active, do: "page", else: nil}
+    >
+      {@label}
+    </.link>
+    """
+  end
+
+  defp page_range(_current, total) when total <= 7, do: Enum.to_list(1..total)
+
+  defp page_range(current, total) do
+    always = MapSet.new([1, total, current, current - 1, current + 1])
+
+    1..total
+    |> Enum.filter(&MapSet.member?(always, &1))
+    |> Enum.reduce([], fn page, acc ->
+      case acc do
+        [prev | _] when page - prev > 1 -> [page, :ellipsis | acc]
+        _ -> [page | acc]
+      end
+    end)
+    |> Enum.reverse()
+  end
+
+  # --- Existing components (unchanged) ---
 
   attr :active, :boolean, default: false
   attr :patch, :string, required: true
@@ -153,16 +324,13 @@ defmodule MeksDevWeb.BlogLive.Index do
     ~H"""
     <.link
       patch={@patch}
-      class={
-        [
-          # <-- rounded-md, not rounded-full
-          "text-sm px-3 py-1 rounded-md border transition-colors",
-          if(@active,
-            do: "bg-journal-charcoal text-journal-cream border-journal-charcoal",
-            else: "bg-white text-gray-600 border-gray-300 hover:border-gray-500"
-          )
-        ]
-      }
+      class={[
+        "text-sm px-3 py-1 rounded-md border transition-colors",
+        if(@active,
+          do: "bg-journal-charcoal text-journal-cream border-journal-charcoal",
+          else: "bg-white text-gray-600 border-gray-300 hover:border-gray-500"
+        )
+      ]}
     >
       {render_slot(@inner_block)}
     </.link>
