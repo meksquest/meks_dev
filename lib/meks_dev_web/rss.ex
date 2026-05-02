@@ -31,6 +31,7 @@ defmodule MeksDevWeb.RSS do
           <guid isPermaLink="true">#{url}</guid>
           <pubDate>#{pub_date}</pubDate>
           #{if post.description, do: "<description>#{escape(post.description)}</description>", else: ""}
+          <content:encoded><![CDATA[#{post.body}]]></content:encoded>
           #{if post.location, do: "<category>#{escape(post.location)}</category>", else: ""}
           #{Enum.map_join(post.tags, "\n  ", fn tag -> "<category>#{escape(tag)}</category>" end)}
         </item>
@@ -39,16 +40,18 @@ defmodule MeksDevWeb.RSS do
 
     """
     <?xml version="1.0" encoding="UTF-8"?>
-    <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-      <channel>
-        <title>meks.quest</title>
-        <link>#{MeksDevWeb.Endpoint.url()}</link>
-        <description>Travel writing and stories by Meks McClure</description>
-        <language>en-us</language>
-        <lastBuildDate>#{Calendar.strftime(latest_updated, "%a, %d %b %Y 00:00:00 +0000")}</lastBuildDate>
-        <atom:link href="#{MeksDevWeb.Endpoint.url()}/feed.xml" rel="self" type="application/rss+xml" />
-        #{items}
-      </channel>
+    <rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+      <title>meks.quest</title>
+      <link>#{MeksDevWeb.Endpoint.url()}</link>
+      <description>Travel and Tech writing and stories by Meks McClure</description>
+      <language>en-us</language>
+      <lastBuildDate>#{Calendar.strftime(latest_updated, "%a, %d %b %Y 00:00:00 +0000")}</lastBuildDate>
+      <atom:link href="#{MeksDevWeb.Endpoint.url()}/feed.xml" rel="self" type="application/rss+xml" />
+      #{items}
+    </channel>
     </rss>
     """
   end
