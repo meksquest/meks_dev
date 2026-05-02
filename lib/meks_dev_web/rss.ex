@@ -18,11 +18,12 @@ defmodule MeksDevWeb.RSS do
 
   defp render(posts) do
     latest_updated = posts |> List.first() |> then(& &1.date)
+    base_url = MeksDevWeb.Endpoint.url()
 
     items =
       Enum.map_join(posts, "\n", fn post ->
         pub_date = Calendar.strftime(post.date, "%a, %d %b %Y 00:00:00 +0000")
-        url = MeksDevWeb.Endpoint.url() <> "/blogs/#{post.slug}"
+        url = base_url <> "/blogs/#{post.slug}"
 
         """
         <item>
@@ -30,6 +31,7 @@ defmodule MeksDevWeb.RSS do
           <link>#{url}</link>
           <guid isPermaLink="true">#{url}</guid>
           <pubDate>#{pub_date}</pubDate>
+          <author>meks@meks.quest (Meks McClure)</author>
           #{if post.description, do: "<description>#{escape(post.description)}</description>", else: ""}
           #{if post.location, do: "<category>#{escape(post.location)}</category>", else: ""}
           #{Enum.map_join(post.tags, "\n  ", fn tag -> "<category>#{escape(tag)}</category>" end)}
@@ -45,11 +47,17 @@ defmodule MeksDevWeb.RSS do
       xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
       <title>meks.quest</title>
-      <link>#{MeksDevWeb.Endpoint.url()}</link>
-      <description>Travel and Tech writing and stories by Meks McClure</description>
+      <link>#{base_url}</link>
+      <description>Travel writing and stories by Meks McClure</description>
       <language>en-us</language>
+      <managingEditor>meks@meks.quest (Meks McClure)</managingEditor>
       <lastBuildDate>#{Calendar.strftime(latest_updated, "%a, %d %b %Y 00:00:00 +0000")}</lastBuildDate>
-      <atom:link href="#{MeksDevWeb.Endpoint.url()}/feed.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="#{base_url}/feed.xml" rel="self" type="application/rss+xml" />
+    <image>
+    <url>#{base_url}/images/drawings/crow_drawing.svg</url>
+    <title>meks.quest</title>
+    <link>#{base_url}</link>
+    </image>
       #{items}
     </channel>
     </rss>
