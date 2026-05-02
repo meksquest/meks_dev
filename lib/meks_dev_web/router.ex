@@ -22,6 +22,9 @@ defmodule MeksDevWeb.Router do
     live "/blogs/:slug", BlogLive.Show
   end
 
+  # RSS feed — no pipeline, served as raw XML
+  forward "/feed.xml", MeksDevWeb.RSS
+
   # Other scopes may use custom stacks.
   # scope "/api", MeksDevWeb do
   #   pipe_through :api
