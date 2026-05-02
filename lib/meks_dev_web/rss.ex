@@ -54,7 +54,7 @@ defmodule MeksDevWeb.RSS do
       <lastBuildDate>#{Calendar.strftime(latest_updated, "%a, %d %b %Y 00:00:00 +0000")}</lastBuildDate>
       <atom:link href="#{base_url}/feed.xml" rel="self" type="application/rss+xml" />
     <image>
-    <url>#{base_url}/images/drawings/crow_drawing.svg</url>
+    <url>#{base_url}/images/drawings/vampire_avatar.png</url>
     <title>meks.quest</title>
     <link>#{base_url}</link>
     </image>
