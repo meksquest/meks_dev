@@ -31,9 +31,9 @@ defmodule MeksDevWeb.RSS do
           <guid isPermaLink="true">#{url}</guid>
           <pubDate>#{pub_date}</pubDate>
           #{if post.description, do: "<description>#{escape(post.description)}</description>", else: ""}
-          <content:encoded><![CDATA[#{post.body}]]></content:encoded>
           #{if post.location, do: "<category>#{escape(post.location)}</category>", else: ""}
           #{Enum.map_join(post.tags, "\n  ", fn tag -> "<category>#{escape(tag)}</category>" end)}
+          <content:encoded><![CDATA[#{post.body}]]></content:encoded>
         </item>
         """
       end)
