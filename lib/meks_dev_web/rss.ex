@@ -50,7 +50,7 @@ defmodule MeksDevWeb.RSS do
       <link>#{base_url}</link>
       <description>Travel writing and stories by Meks McClure</description>
       <language>en-us</language>
-      <managingEditor>meks@meks.quest (Meks McClure)</managingEditor>
+      <managingEditor>Meks McClure (they/them)</managingEditor>
       <lastBuildDate>#{Calendar.strftime(latest_updated, "%a, %d %b %Y 00:00:00 +0000")}</lastBuildDate>
       <atom:link href="#{base_url}/feed.xml" rel="self" type="application/rss+xml" />
     <image>
