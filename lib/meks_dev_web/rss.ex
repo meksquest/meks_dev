@@ -31,7 +31,7 @@ defmodule MeksDevWeb.RSS do
           <link>#{url}</link>
           <guid isPermaLink="true">#{url}</guid>
           <pubDate>#{pub_date}</pubDate>
-          <author>meks@meks.quest (Meks McClure)</author>
+          <author>Meks McClure (they/them)</author>
           #{if post.description, do: "<description>#{escape(post.description)}</description>", else: ""}
           #{if post.location, do: "<category>#{escape(post.location)}</category>", else: ""}
           #{Enum.map_join(post.tags, "\n  ", fn tag -> "<category>#{escape(tag)}</category>" end)}
