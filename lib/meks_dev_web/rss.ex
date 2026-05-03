@@ -18,7 +18,7 @@ defmodule MeksDevWeb.RSS do
 
   defp render(posts) do
     latest_updated = posts |> List.first() |> then(& &1.date)
-    base_url = MeksDevWeb.Endpoint.url()
+    base_url = Application.fetch_env!(:meks_dev, :base_url)
 
     items =
       Enum.map_join(posts, "\n", fn post ->

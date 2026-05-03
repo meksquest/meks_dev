@@ -3,7 +3,7 @@ defmodule MeksDev.Blog.Post do
   defstruct [:id, :title, :author, :date, :slug, :description, :location, :body, tags: []]
 
   def build(filename, attrs, body) do
-    base_url = MeksDevWeb.Endpoint.url()
+    base_url = Application.fetch_env!(:meks_dev, :base_url)
 
     html =
       body
