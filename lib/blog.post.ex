@@ -3,14 +3,16 @@ defmodule MeksDev.Blog.Post do
   defstruct [:id, :title, :author, :date, :slug, :description, :location, :body, tags: []]
 
   def build(filename, attrs, body) do
-    html = MDEx.to_html!(body, render: [unsafe: true])
+    base_url = MeksDevWeb.Endpoint.url()
+
+    html =
+      body
+      |> MDEx.to_html!(render: [unsafe: true])
+      |> String.replace(~r/src="\//, ~s(src="#{base_url}/))
 
     struct!(
       __MODULE__,
-      Map.merge(attrs, %{
-        id: filename,
-        body: html
-      })
+      Map.merge(attrs, %{id: filename, body: html})
     )
   end
 end
