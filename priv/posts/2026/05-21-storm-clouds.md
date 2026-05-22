@@ -33,11 +33,11 @@ to keep from scattering,
 letting go,
 letting the flood win.
 
+This is the country with no name.
+
 You struggle to breathe
 as the flood fills your lungs
 and leaks down your cheeks.
-
-This is the country with no name.
 
 Look at you.
 The courage it takes to pause.
