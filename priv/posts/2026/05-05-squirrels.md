@@ -16,11 +16,15 @@ I have spent the past ten minutes negotiating with my dog over a dead squirrel.
 Tommy found it in the woods during our walk and picked it up like a trophy. I swooped in and grabbed his head awkwardly to stop him from chomping down on it.
 
 I do not have gloves.
+
 I do not want to touch the decaying squirrel.
+
 And he has absolutely no intention of giving it up.
 
 So we stand there:
+
 him, proud and unbothered, jaw locked like a vice;
+
 me, increasingly desperate, trying to convince my eighty-pound doodle through sheer persuasion that this is not something we need to bring home.
 
 Eventually, somehow, I win.
@@ -34,7 +38,9 @@ Back in the car, Tommy pants happily in the back seat, squirrel-free at last, wh
 I grew up in Minnesota, where squirrels are so common they barely register as wildlife.
 
 They are pests.
+
 Menaces.
+
 Tiny furry inevitabilities.
 
 We build elaborate contraptions to stop them from stealing birdseed. They shred patio furniture, tunnel into attics, and scream at dogs from tree branches thirty feet overhead like tiny woodland antagonists.
@@ -67,7 +73,7 @@ Then suddenly:
 
 “There’s… a squirrel?”
 
-My Venezuelan friend Ama and her German partner Koni rush toward a grove of trees, pointing excitedly at an entirely ordinary gray squirrel twitching its tail overhead.
+My friend Ama and her German partner Koni rush toward a grove of trees, pointing excitedly at an entirely ordinary gray squirrel twitching its tail overhead.
 
 “Meks, you don’t understand,” Koni explains. “They’re rare here. It’s special to see one.”
 
@@ -120,7 +126,9 @@ Then it turns.
 Its tail is bright blonde.
 
 Not pale gray.
+
 Not silver.
+
 Blonde.
 
 Like badly bleached summer hair.
